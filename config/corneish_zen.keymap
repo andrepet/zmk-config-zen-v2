@@ -44,6 +44,7 @@
 #define _MINUS FSLH                /* - */
 #define _PLUS  MINUS               /* + */
 #define _DQUOT LS(N2)              /* " */
+#define _SEMIC LS(COMMA)           /* ; */
 #define _COLON LS(DOT)             /* : */
 #define _FSLH  LS(N7)              /* / */
 #define _QMARK LS(MINUS)           /* ? */
