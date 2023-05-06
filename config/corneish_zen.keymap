@@ -54,9 +54,9 @@
 #define _RBKT  RC(RA(N9))          /* ] */
 #define _RBRC  RC(RA(N0))          /* } */
 #define _PIPE  RC(RA(NUBS))        /* | */
-#define _AT RC(RA(N2))             /* @ */
+#define _AT    RC(RA(N2))          /* @ */
 #define _DOLAR RC(RA(N4))          /* $ */
-#define _EURO RC(RA(N5))           /* € */
+#define _EURO  RC(RA(N5))          /* € */
 #define _POUND RC(RA(N3))          /* £ */
 #define _CRNCY LS(N4)              /* ¤ */
 #define _MICRO RC(RA(M))           /* µ */
@@ -92,7 +92,7 @@
 #define _MS_R SCROLL_HOR(U_MOUSE_SCROLL_MAX)
 
 &mwh {
-  time-to-max-speed-ms = <500>;                   /* <--- How long time until max speed is reached */
+     time-to-max-speed-ms = <500>;                /* <--- How long time until max speed is reached */
 };
 
 / {
@@ -116,7 +116,7 @@
                     0  1  2  3  4  5 
                    12 13 14 15 16 17
                    24 25 26 27 28 29
-                36 37 38
+                   36 37 38
                >;
           };
           l_ht: left_hold_tap {
@@ -240,7 +240,7 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å          |
-     &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T             &kp Y        &kp U         &kp I        &kp O       &kp P         &kp _OE    
+     &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P        &kp _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ESC  CTRL  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä          |
  &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO      &kp _AE
@@ -278,7 +278,7 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | !          | @          | FIND       | CTRL + P   | GO-TO IDEA |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
-     &none        &kp EXCL     &at_pnd      SHRT1(F,         P,           B)             &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp EQUAL    &kp _MINUS
+     &none        &kp EXCL     &at_pnd      SHRT1(F,         P,           B)             &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | CTRL+A mod | CTRL+R mod | CTRL+S mod | CTRL+T mod | CTRL + G   |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        SHRT2(A,         R,           S,           T,           G)             &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
@@ -297,7 +297,7 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | GAMING     |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
-     &tog GAMING  &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp EQUAL    &kp _MINUS
+     &tog GAMING  &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
