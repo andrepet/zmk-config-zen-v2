@@ -52,6 +52,9 @@
 #define _RBKT  RC(RA(N9))          /* ] */
 #define _RBRC  RC(RA(N0))          /* } */
 #define _PIPE  RC(RA(NUBS))        /* | */
+#define _AT RC(RA(N2))             /* @ */
+#define _DOLAR RC(RA(N4))          /* $ */
+#define _EURO RC(RA(N5))           /* € */
 #define _POUND RC(RA(N3))          /* £ */
 #define _CRNCY LS(N4)              /* ¤ */
 #define _MICRO RC(RA(M))           /* µ */
@@ -133,35 +136,35 @@
                compatible = "zmk,behavior-mod-morph";            
                label = "SWEDISH_SEMICOLON";
                #binding-cells = <0>;
-               bindings = <&kp LS(COMMA)>, <&kp LS(DOT)>;
+               bindings = <&kp _SEMIC>, <&kp _COLON>; /* ; : */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           se_quot: single_quote_shift_double_quote {            
                compatible = "zmk,behavior-mod-morph";            
                label = "SWEDISH_QUOTE";
                #binding-cells = <0>;
-               bindings = <&kp NON_US_HASH>, <&kp LS(N2)>;
+               bindings = <&kp _SQUOT>, <&kp _DQUOT>; /* ' " */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           se_slsh: slash_shift_question {            
                compatible = "zmk,behavior-mod-morph";            
                label = "SWEDISH_SLASH_QUESTION";
                #binding-cells = <0>;
-               bindings = <&kp LS(N7)>, <&kp LS(MINUS)>;
+               bindings = <&kp _FSLH>, <&kp _QMARK>; /* / ? */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           se_lbrc: se_left_bracket {            
                compatible = "zmk,behavior-mod-morph";            
                label = "SWEDISH_LEFT_BRACKET";
                #binding-cells = <0>;
-               bindings = <&kp RC(RA(N8))>, <&kp RC(RA(N7))>;
+               bindings = <&kp _LBKT>, <&kp _LBRC>; /* [ { */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           se_rbrc: se_right_bracket {            
                compatible = "zmk,behavior-mod-morph";            
                label = "SWEDISH_RIGHT_BRACKET";
                #binding-cells = <0>;
-               bindings = <&kp RC(RA(N9))>, <&kp RC(RA(N0))>;
+               bindings = <&kp _RBKT>, <&kp _RBRC>; /* ] } */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           se_pipe: se_pipe {            
@@ -175,28 +178,28 @@
                compatible = "zmk,behavior-mod-morph";            
                label = "SWEDISH_AT_SHIFT_POUND";
                #binding-cells = <0>;
-               bindings = <&kp RC(RA(N2))>, <&kp RC(RA(N3))>;
+               bindings = <&kp _AT>, <&kp _POUND>; /* @ £ */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           dlr_eur: dollar_shift_eur {            
                compatible = "zmk,behavior-mod-morph";            
                label = "SWEDISH_DOLLAR_SHIFT_EURO";
                #binding-cells = <0>;
-               bindings = <&kp RC(RA(N4))>, <&kp RC(RA(N5))>;
+               bindings = <&kp _DOLAR>, <&kp _EURO>; /* $ € */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           cur_mcr: currency_shift_micro {            
                compatible = "zmk,behavior-mod-morph";            
                label = "SWEDISH_CURRENCY_SCARAB_SHIFT_MICRO";
                #binding-cells = <0>;
-               bindings = <&kp LS(N4)>, <&kp RC(RA(M))>;
+               bindings = <&kp _CRNCY>, <&kp _MICRO>; /* ¤ µ */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           par_hlf: paragraph_shift_half_character {            
                compatible = "zmk,behavior-mod-morph";            
                label = "SWEDISH_PARAGRAPH_SHIFT_HALF_CHARACTER";
                #binding-cells = <0>;
-               bindings = <&kp GRAVE>, <&kp LS(GRAVE)>;
+               bindings = <&kp _PARGH>, <&kp _HALF>; /* § ½ */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
      };
