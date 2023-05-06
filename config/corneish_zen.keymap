@@ -77,7 +77,6 @@
 
 // Define experimental mouse scroll settings
 #define U_MOUSE_SCROLL_MAX 75                     /* <--- New max speed setting (default: 10) */
-
 //#undef SCROLL_UP
 //#undef SCROLL_DOWN
 //#undef SCROLL_LEFT
@@ -170,7 +169,7 @@
                 compatible = "zmk,behavior-mod-morph";            
                 label = "SWEDISH_PIPE";
                 #binding-cells = <0>;
-                bindings = <&kp RC(RA(NUBS))>, <&kp RC(RA(NUBS))>;
+                bindings = <&kp _PIPE>, <&kp _BSLH>; /* | \ */
                 mods = <(MOD_LSFT|MOD_RSFT)>;
             };
             at_pnd: at_shift_pound {            
@@ -330,7 +329,7 @@
 // | § ½        | &          | $ €        | (          | )          | #          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
      &par_hlf     &kp _AMPER   &dlr_eur     &kp _LPAR    &kp _RPAR    &kp HASH           &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ¤ µ        | "|"        | ^          | <          | >          | *          |     |            |            |            |            |            |            |
+// | ¤ µ        | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            |            |
      &cur_mcr     &se_pipe     &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPC              | SPC              | ENT              |     |                  |                  |                  |  
