@@ -45,6 +45,20 @@
 #define _PLUS MINUS                /* + */
 #define _DQUOT LS(N2)              /* " */
 #define _COLON LS(DOT)             /* : */
+#define _FSLH LS(N7)               /* / */
+#define _QMARK LS(MINUS)           /* ? */
+#define _LBKT RC(RA(N8))           /* [ */
+#define _LBRC RC(RA(N7))           /* { */
+#define _RBKT RC(RA(N9))           /* ] */
+#define _RBRC RC(RA(N0))           /* } */
+#define _PIPE RC(RA(NUBS))         /* | */
+#define _POUND RC(RA(N3))          /* £ */
+#define _CRNCY LS(N4)              /* ¤ */
+#define _MICRO RC(RA(M))           /* µ */
+#define _PARGH GRAVE               /* § */
+#define _HALF LS(GRAVE)            /* ½ */
+#define _ACUTE EQUAL               /* ´ */
+#define _BTICK LS(EQUAL)           /* ` */
 
 // Define experimental mouse movement settings
 #define U_MOUSE_MOVE_MAX 1400                     /* <--- New max speed setting (default: 600) */
@@ -58,11 +72,11 @@
 #define _MM_R MOVE_HOR(U_MOUSE_MOVE_MAX)
 
 &mmv {
-	time-to-max-speed-ms = <400>;             /* <--- How long time until max speed is reached (default: 500) */
+	time-to-max-speed-ms = <400>;                /* <--- How long time until max speed is reached (default: 500) */
 };
 
 // Define experimental mouse scroll settings
-#define U_MOUSE_SCROLL_MAX 75                    /* <--- New max speed setting (default: 10) */
+#define U_MOUSE_SCROLL_MAX 75                     /* <--- New max speed setting (default: 10) */
 
 //#undef SCROLL_UP
 //#undef SCROLL_DOWN
@@ -74,7 +88,7 @@
 #define _MS_R SCROLL_HOR(U_MOUSE_SCROLL_MAX)
 
 &mwh {
-  time-to-max-speed-ms = <500>;                 /* <--- How long time until max speed is reached */
+  time-to-max-speed-ms = <500>;                   /* <--- How long time until max speed is reached */
 };
 
 / {
