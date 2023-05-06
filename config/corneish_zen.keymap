@@ -200,7 +200,7 @@
      &kp TAB      &kp Q        HRML1(W,         F)       &kp P        &kp B              &kp J        &kp L        HRMR1(U,         Y)       &kp _OO      &kp _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ESC mod    | A  mod     | R mod      | S mod      | T mod      | G mod      |     | M  mod     | N mod      | E mod      | I          | O          | Ä          |
-     HRML2(ESC,       A,           R,           S,           T,           G)             HRMR2(M,         N,           E,           I,           O,           SQT)
+     HRML2(ESC,       A,           R,           S,           T,           G)             HRMR2(M,         N,           E,           I,           O,           _AE)
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | \          | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | ' "        |
      &kp _BSLH    &kp Z        HRML3(X,         C,           D,           V)             HRMR3(K,         H,        COMMA,        DOT)       &se_slsh     &se_quot
