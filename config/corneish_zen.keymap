@@ -27,23 +27,24 @@
 #define SHRT3(k1,k2,k3,k4,k5) &kp LC(k1)   &kp LC(k2)   &kp LC(k3)   &kp LC(k4)   &kp LC(k5)
 
 // Special swedish character macro for WINDOWS
-#define _OE LBKT                   // Å
-#define _AE SQT                    // Ä
-#define _OO SEMI                   // Ö 
-#define _BSLH RC(RA(MINUS))        // \
-#define _LT NON_US_BSLH            // <
-#define _GT LS(NON_US_BSLH)        // >
-#define _ASTRX LS(NON_US_HASH)     // *
-#define _TILDE RC(RA(RBKT))        // ~
-#define _LPAR LS(N8)               // (
-#define _RPAR LS(N9)               // )
-#define _TOP RBRC                  // ^
-#define _EQ RPAR                   // =
-#define _UNDER LS(FSLH)            // _
-#define _MINUS FSLH                // -
-#define _PLUS MINUS                // +
-#define _DQUOT LS(N2)              // "
-#define _COLON LS(DOT)             // :
+#define _OE LBKT                   /* Å */
+#define _AE SQT                    /* Ä */
+#define _OO SEMI                   /* Ö */
+#define _AMPER CARET               /* & */
+#define _BSLH RC(RA(MINUS))        /* \ */
+#define _LT NON_US_BSLH            /* < */
+#define _GT LS(NON_US_BSLH)        /* > */
+#define _ASTRX LS(NON_US_HASH)     /* * */
+#define _TILDE RC(RA(RBKT))        /* ~ */
+#define _LPAR LS(N8)               /* ( */
+#define _RPAR LS(N9)               /* ) */
+#define _TOP RBRC                  /* ^ */
+#define _EQ RPAR                   /* = */
+#define _UNDER LS(FSLH)            /* _ */
+#define _MINUS FSLH                /* - */
+#define _PLUS MINUS                /* + */
+#define _DQUOT LS(N2)              /* " */
+#define _COLON LS(DOT)             /* : */
 
 // Define experimental mouse movement settings
 #define U_MOUSE_MOVE_MAX 1400                     /* <--- New max speed setting (default: 600) */
@@ -313,7 +314,7 @@
      &kp _TILDE   &kp EXCL     &at_pnd      &se_lbrc     &se_rbrc     &kp PRCNT          &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | § ½        | &          | $ €        | (          | )          | #          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
-     &par_hlf     &kp CARET    &dlr_eur     &kp _LPAR    &kp _RPAR    &kp HASH           &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
+     &par_hlf     &kp _AMPER   &dlr_eur     &kp _LPAR    &kp _RPAR    &kp HASH           &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ¤ µ        | "|"        | ^          | <          | >          | *          |     |            |            |            |            |            |            |
      &cur_mcr     &se_pipe     &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &none
