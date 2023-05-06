@@ -322,7 +322,7 @@
      &tog MOUSE   &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none          &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            |            |            | SCROLL DOWN| SCROLL UP  |            |     |            | LEFT CLICK | RIGHT CLICK|            |            |            |
-     &none        &none        &none  &mwh SCROLL_DOWN  &mwh SCROLL_up  &none            &none        &mkp LCLK    &mkp RCLK    &none        &none        &none
+     &none        &none        &none  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &none            &none        &mkp LCLK    &mkp RCLK    &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPC              | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
                           &kp SPACE          &mkp LCLK          &mkp RCLK                &none              &none              &none
