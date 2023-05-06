@@ -43,6 +43,7 @@
 #define _UNDER LS(FSLH)            /* _ */
 #define _MINUS FSLH                /* - */
 #define _PLUS  MINUS               /* + */
+#define _SQUOT NON_US_HASH         /* ' */
 #define _DQUOT LS(N2)              /* " */
 #define _SEMIC LS(COMMA)           /* ; */
 #define _COLON LS(DOT)             /* : */
@@ -203,6 +204,13 @@
                bindings = <&kp _PARGH>, <&kp _HALF>; /* § ½ */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
+          btik_tld: back_tick_shift_tilde {            
+               compatible = "zmk,behavior-mod-morph";            
+               label = "SWEDISH_BACK_TICK_SHIFT_TILDE";
+               #binding-cells = <0>;
+               bindings = <&kp _BTICK>, <&kp _TILDE>; /* ` ~ */
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
      };
 
      keymap {
@@ -326,8 +334,8 @@
                label = "SYMBOL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ~          | !          | @ £        | [ {        | ] }        | %          |     |            |            |            |            |            |            |
-     &kp _TILDE   &kp EXCL     &at_pnd      &se_lbrc     &se_rbrc     &kp PRCNT          &none        &none        &none        &none        &none        &none
+// | ` ~        | !          | @ £        | [ {        | ] }        | %          |     |            |            |            |            |            |            |
+     &btik_tld    &kp EXCL     &at_pnd      &se_lbrc     &se_rbrc     &kp PRCNT          &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | § ½        | &          | $ €        | (          | )          | #          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
      &par_hlf     &kp _AMPER   &dlr_eur     &kp _LPAR    &kp _RPAR    &kp HASH           &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
