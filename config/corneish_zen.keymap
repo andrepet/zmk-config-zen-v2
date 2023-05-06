@@ -26,11 +26,21 @@
 #define SHRT2(k1,k2,k3,k4,k5) &l_ht LCTRL LC(k1)   &l_ht LALT LC(k2)   &l_ht LGUI LC(k3)   &l_ht LSHIFT LC(k4)   &kp LC(k5)
 #define SHRT3(k1,k2,k3,k4,k5) &kp LC(k1)   &kp LC(k2)   &kp LC(k3)   &kp LC(k4)   &kp LC(k5)
 
-// Special swedish character macro
+// Special swedish character macro for WINDOWS
 #define _BSLH RC(RA(MINUS))
 #define _LT NON_US_BSLH
 #define _GT LS(NON_US_BSLH)
 #define _ASTRX LS(NON_US_HASH)
+#define _TILDE RC(RA(RBKT))
+#define _LPAR LS(N8)
+#define _RPAR LS(N9)
+#define _TOP RBRC
+#define _EQ RPAR
+#define _UNDER LS(FSLH)
+#define _MINUS FSLH
+#define _PLUS MINUS
+#define _DQUOT LS(N2)
+#define _COLON LS(DOT)
 
 // Define experimental mouse movement settings
 #define U_MOUSE_MOVE_MAX 1400                     /* <--- New max speed setting (default: 600) */
@@ -221,16 +231,16 @@
                         bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        | 1          | 2          | 3          | 4          | 5          |     | 6          | 7          | 8          | 9          | 0          | - _        |
-     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp FSLH
+     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TOGGLE     | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
-     &tog NUMBER  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp MINUS
+     &tog NUMBER  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | ' "        |
-     &none        SHRT3(Z,         X,           C,           D,           V)             &kp DOT      &kp N1       &kp N2       &kp N3       &kp LS(DOT)  &kp LS(N2)
+// |            | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | "          |
+     &none        SHRT3(Z,         X,           C,           D,           V)             &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &kp _DQUOT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      | FUNC             | NAV SPACE        | ENT              |     | =                | 0 SYM            | - NAV2           |
-                          &mo FUNC           &lt NAV SPACE      &kp RET                  &kp RPAR           &lt SYMBOL N0      &lt NAV2 FSLH 
+//                      | FUNC             | NAV SPACE        | ENT              |     | =                | 0 SYM            | - _ NAV2         |
+                          &mo FUNC           &lt NAV SPACE      &kp RET                  &kp _EQ            &lt SYMBOL N0      &lt NAV2 _MINUS 
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                         >;
                 };
@@ -240,16 +250,16 @@
                         bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | !          | @          | FIND       | CTRL + P   | GO-TO IDEA |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
-     &none        &kp EXCL     &at_pnd      SHRT1(F,         P,           B)             &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp EQUAL    &kp FSLH
+     &none        &kp EXCL     &at_pnd      SHRT1(F,         P,           B)             &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp EQUAL    &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | CTRL+A mod | CTRL+R mod | CTRL+S mod | CTRL+T mod | CTRL + G   |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
-     &none        SHRT2(A,         R,           S,           T,           G)             &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp MINUS
+     &none        SHRT2(A,         R,           S,           T,           G)             &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
-     &none        SHRT3(Z,         X,           C,           D,           V)             &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp LS(DOT)  &kp LS(N2)
+// |            | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | "          |
+     &none        SHRT3(Z,         X,           C,           D,           V)             &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      |                  |                  |                  |     | =                | _                | -                |
-                          &none              &none              &none                    &kp RPAR           &kp LS(FSLH)       &kp FSLH
+//                      |                  |                  |                  |     | =                | _                | - _              |
+                          &none              &none              &none                    &kp _EQ            &kp _UNDER         &kp _MINUS
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                         >;
                 };
@@ -259,13 +269,13 @@
                         bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | GAMING     |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
-     &tog GAMING  &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp EQUAL    &kp FSLH
+     &tog GAMING  &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp EQUAL    &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
-     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp MINUS
+     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            |            |            |            |            |            |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
-     &none        &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp LS(DOT)  &kp LS(N2)
+     &none        &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | CAPS LOCK        | TOGGLE MOUSE     | TOGGLE NUMBER    |     |                  |                  |                  |
                           &kp CAPS           &tog MOUSE         &tog NUMBER              &none              &none              &none
@@ -297,13 +307,13 @@
                         bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ~          | !          | @ £        | [ {        | ] }        | %          |     |            |            |            |            |            |            |
-&kp RC(RA(RBKT))  &kp EXCL     &at_pnd      &se_lbrc     &se_rbrc     &kp PRCNT          &none        &none        &none        &none        &none        &none
+     &kp _TILDE   &kp EXCL     &at_pnd      &se_lbrc     &se_rbrc     &kp PRCNT          &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | § ½        | &          | $ €        | (          | )          | #          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
-     &par_hlf     &kp CARET    &dlr_eur     &kp LS(N8)   &kp LS(N9)   &kp HASH           &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
+     &par_hlf     &kp CARET    &dlr_eur     &kp _LPAR    &kp _RPAR    &kp HASH           &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ¤ µ        | "|"        | ^          | <          | >          | *          |     |            |            |            |            |            |            |
-     &cur_mcr     &se_pipe     &kp RBRC     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &none
+     &cur_mcr     &se_pipe     &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPC              | SPC              | ENT              |     |                  |                  |                  |  
                           &kp SPACE          &kp SPACE          &kp RET                  &none              &none              &none
