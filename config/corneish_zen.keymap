@@ -334,11 +334,11 @@
                label = "SYMBOL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ` ~        | !          | @ £        | [ {        | ] }        | %          |     |            |            |            |            |            |            |
-     &btik_tld    &kp EXCL     &at_pnd      &se_lbrc     &se_rbrc     &kp PRCNT          &none        &none        &none        &none        &none        &none
+// | ` ~        | !          | @ £        | [ {        | ] }        | #          |     |            |            |            |            |            |            |
+     &btik_tld    &kp EXCL     &at_pnd      &se_lbrc     &se_rbrc     &kp HASH           &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | § ½        | &          | $ €        | (          | )          | #          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
-     &par_hlf     &kp _AMPER   &dlr_eur     &kp _LPAR    &kp _RPAR    &kp HASH           &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
+// | § ½        | &          | $ €        | (          | )          | %          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
+     &par_hlf     &kp _AMPER   &dlr_eur     &kp _LPAR    &kp _RPAR    &kp PRCNT          &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ¤ µ        | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            |            |
      &cur_mcr     &se_pipe     &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &none
