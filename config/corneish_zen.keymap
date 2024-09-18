@@ -229,8 +229,8 @@
 // | \          | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | ' "        |
      &kp _BSLH    &kp Z        HRML3(X,         C,           D,           V)             HRMR3(K,         H,        COMMA,        DOT)       &se_slsh     &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      | FUNC             | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
-                          &mo FUNC           &lt NAV SPACE      &lt NUMBER RET           &lt MOUSE DEL      &lt SYMBOL BSPC    &lt NAV2 BSPC
+//                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
+                          &lt FUNC TAB       &lt NAV SPACE      &lt NUMBER RET           &lt MOUSE DEL      &lt SYMBOL BSPC    &lt NAV2 BSPC
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                >;
           };
