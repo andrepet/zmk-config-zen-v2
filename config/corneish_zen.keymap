@@ -47,7 +47,7 @@
 #define _DQUOT LS(N2)              /* " */
 #define _SEMIC LS(COMMA)           /* ; */
 #define _COLON LS(DOT)             /* : */
-#define _FSLH  LS(N7)              /* / */
+#define _FSLH  KP_DIVIDE           /* / */
 #define _QMARK LS(MINUS)           /* ? */
 #define _LBKT  RC(RA(N8))          /* [ */
 #define _LBRC  RC(RA(N7))          /* { */
