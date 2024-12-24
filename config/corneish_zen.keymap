@@ -313,8 +313,8 @@
                label = "wNAV2";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC TOGGLE |
-     &none        &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &tog MAC_COL
+// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC LAYER  |
+     &none        &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &to MAC_COL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
@@ -332,14 +332,14 @@
                label = "wFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | WIN TOGGLE | BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
-    &tog WIN_COL  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR         &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
+// | WIN LAYER  | BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
+     &to WIN_COL  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR         &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            |            |
-     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT  &tog WIN_QRTY       &kp F11      &kp F4       &kp F5       &kp F6       &none        &none 
+     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT  &to WIN_QRTY        &kp F11      &kp F4       &kp F5       &kp F6       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            |            |            |            | CAPS       | COLEMAK    |     | F10        | F1         | F2         | F3         |            |            |
-     &none        &none        &none        &none        &kp CAPS    &tog WIN_COL        &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
+     &none        &none        &none        &none        &kp CAPS     &to WIN_COL        &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | DEL              | BSPC             | CAPS             |
                           &none              &none              &none                    &kp DEL            &kp BSPC           &kp CAPS
@@ -465,8 +465,8 @@
                label = "mNAV2";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC TOGGLE |
-     &none        &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE  &tog MAC_COL
+// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC LAYER  |
+     &none        &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &to MAC_COL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
@@ -484,14 +484,14 @@
                label = "mFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | WIN TOGGLE | BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
-  &tog WIN_COL   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_CLR         &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
+// | WIN LAYER  | BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
+    &to WIN_COL  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_CLR         &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            |            |
-     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT &tog MAC_QRTY        &kp F11      &kp F4       &kp F5       &kp F6       &none        &none 
+     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT  &to MAC_QRTY        &kp F11      &kp F4       &kp F5       &kp F6       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            |            |            |            | CAPS       | COLEMAK    |     | F10        | F1         | F2         | F3         |            |            |
-     &none        &none        &none        &none        &kp CAPS   &tog MAC_COL         &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
+     &none        &none        &none        &none        &kp CAPS     &to MAC_COL        &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | DEL              | BSPC             | CAPS             |
                           &none              &none              &none                    &kp DEL            &kp BSPC           &kp CAPS
