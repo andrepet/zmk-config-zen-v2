@@ -56,11 +56,13 @@
 #define _AE    SQT                 /* Ä */
 #define _OO    SEMI                /* Ö */
 #define _AMPER CARET               /* & */
-#define _BSLH  RC(RA(MINUS))       /* \ */
+#define w_BSLH  RC(RA(MINUS))      /* \ Windows */
+#define m_BSLH  LS(RA(N7))         /* \ Mac */
 #define _LT    NON_US_BSLH         /* < */
 #define _GT    LS(NON_US_BSLH)     /* > */
 #define _ASTRX LS(NON_US_HASH)     /* * */
-#define _TILDE RC(RA(RBKT))        /* ~ */
+#define w_TILDE RC(RA(RBKT))       /* ~ Windows */
+#define m_TILDE RA(RBKT)           /* ~ Mac */
 #define _LPAR  LS(N8)              /* ( */
 #define _RPAR  LS(N9)              /* ) */
 #define _TOP   RBRC                /* ^ */
@@ -74,19 +76,28 @@
 #define _COLON LS(DOT)             /* : */
 #define _FSLH  KP_DIVIDE           /* / */
 #define _QMARK LS(MINUS)           /* ? */
-#define _LBKT  RC(RA(N8))          /* [ */
-#define _LBRC  RC(RA(N7))          /* { */
-#define _RBKT  RC(RA(N9))          /* ] */
-#define _RBRC  RC(RA(N0))          /* } */
-#define _PIPE  RC(RA(NUBS))        /* | */
-#define _AT    RC(RA(N2))          /* @ */
-#define _DOLAR RC(RA(N4))          /* $ */
-#define _EURO  RC(RA(N5))          /* € */
-#define _POUND RC(RA(N3))          /* £ */
-#define _CRNCY LS(N4)              /* ¤ */
-#define _MICRO RC(RA(M))           /* µ */
+#define w_LBKT  RC(RA(N8))         /* [ Windows */
+#define m_LBKT  RA(N8)             /* [ Mac */
+#define w_LBRC  RC(RA(N7))         /* { Windows */
+#define m_LBRC  LS(RA(N8))         /* { Mac */
+#define w_RBKT  RC(RA(N9))         /* ] Windows */
+#define m_RBKT  RA(N9)             /* ] Mac */
+#define w_RBRC  RC(RA(N0))         /* } Windows */
+#define m_RBRC  LS(RA(N9))         /* } Mac */
+#define w_PIPE  RC(RA(NUBS))       /* | Windows */
+#define m_PIPE  RA(N7)             /* | Mac */
+#define w_AT    RC(RA(N2))         /* @ Windows */
+#define m_AT    RA(N2)             /* @ Mac */
+#define w_DOLAR RC(RA(N4))         /* $ Windows */
+#define m_DOLAR RA(N4)             /* $ Mac */
+#define w_EURO  RC(RA(N5))         /* € Windows */
+#define m_EURO  LS(N4)             /* € Mac */
+#define w_POUND RC(RA(N3))         /* £ Windows */
+#define m_POUND RA(N3)             /* £ Mac */
+#define w_MICRO RC(RA(M))          /* µ Windows*/ 
+#define m_MICRO RA(Y)              /* µ Mac*/ 
 #define _PARGH GRAVE               /* § */
-#define _HALF  LS(GRAVE)           /* ½ */
+#define _HALF  LS(GRAVE)           /* ½  Windows, ° Mac*/
 #define _ACUTE EQUAL               /* ´ */
 #define _BTICK LS(EQUAL)           /* ` */
 
@@ -172,60 +183,74 @@
                bindings = <&kp _FSLH>, <&kp _QMARK>; /* / ? */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
-          se_lbrc: se_left_bracket {            
+          w_se_lbrc: w_se_left_bracket {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "SWEDISH_LEFT_BRACKET";
+               label = "WINDOWS_SWEDISH_LEFT_BRACKET";
                #binding-cells = <0>;
-               bindings = <&kp _LBKT>, <&kp _LBRC>; /* [ { */
+               bindings = <&kp w_LBKT>, <&kp w_LBRC>; /* [ { Windows */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
-          se_rbrc: se_right_bracket {            
+          m_se_lbrc: m_se_left_bracket {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "SWEDISH_RIGHT_BRACKET";
+               label = "MAC_SWEDISH_LEFT_BRACKET";
                #binding-cells = <0>;
-               bindings = <&kp _RBKT>, <&kp _RBRC>; /* ] } */
+               bindings = <&kp m_LBKT>, <&kp m_LBRC>; /* [ { Mac */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
-          se_pipe: se_pipe {            
+          w_se_rbrc: w_se_right_bracket {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "SWEDISH_PIPE";
+               label = "WINDOWS_SWEDISH_RIGHT_BRACKET";
                #binding-cells = <0>;
-               bindings = <&kp _PIPE>, <&kp _BSLH>; /* | \ */
+               bindings = <&kp w_RBKT>, <&kp w_RBRC>; /* ] } Windows */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
-          at_pnd: at_shift_pound {            
+          m_se_rbrc: m_se_right_bracket {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "SWEDISH_AT_SHIFT_POUND";
+               label = "MAC_SWEDISH_RIGHT_BRACKET";
                #binding-cells = <0>;
-               bindings = <&kp _AT>, <&kp _POUND>; /* @ £ */
+               bindings = <&kp m_RBKT>, <&kp m_RBRC>; /* ] } Mac */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
-          dlr_eur: dollar_shift_eur {            
+          w_pnd_mic: w_pnd_mic {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "SWEDISH_DOLLAR_SHIFT_EURO";
+               label = "WINDOWS_SWEDISH_POUND_SHIFT_MICRO";
                #binding-cells = <0>;
-               bindings = <&kp _DOLAR>, <&kp _EURO>; /* $ € */
+               bindings = <&kp w_POUND>, <&kp w_MICRO>; /* £ µ Windows */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
-          cur_mcr: currency_shift_micro {            
+          m_pnd_mic: m_pnd_mic {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "SWEDISH_CURRENCY_SCARAB_SHIFT_MICRO";
+               label = "MAC_SWEDISH_POUND_SHIFT_MICRO";
                #binding-cells = <0>;
-               bindings = <&kp _CRNCY>, <&kp _MICRO>; /* ¤ µ */
+               bindings = <&kp m_POUND>, <&kp m_MICRO>; /* £ µ Mac */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
-          par_hlf: paragraph_shift_half_character {            
+          w_at_pnd: w_at_shift_pound {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "SWEDISH_PARAGRAPH_SHIFT_HALF_CHARACTER";
+               label = "WINDOWS_SWEDISH_AT_SHIFT_POUND";
                #binding-cells = <0>;
-               bindings = <&kp _PARGH>, <&kp _HALF>; /* § ½ */
+               bindings = <&kp w_AT>, <&kp w_POUND>; /* @ £  Windows */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
-          btik_tld: back_tick_shift_tilde {            
+          m_at_pnd: m_at_shift_pound {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "SWEDISH_BACK_TICK_SHIFT_TILDE";
+               label = "MAC_SWEDISH_AT_SHIFT_POUND";
                #binding-cells = <0>;
-               bindings = <&kp _BTICK>, <&kp _TILDE>; /* ` ~ */
+               bindings = <&kp m_AT>, <&kp m_POUND>; /* @ £ Mac */
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          w_dlr_eur: w_dollar_shift_eur {
+               compatible = "zmk,behavior-mod-morph";            
+               label = "WINDOWS_SWEDISH_DOLLAR_SHIFT_EURO";
+               #binding-cells = <0>;
+               bindings = <&kp w_DOLAR>, <&kp w_EURO>; /* $ € Windows */
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          m_dlr_eur: m_dollar_shift_eur {
+               compatible = "zmk,behavior-mod-morph";            
+               label = "MAC_SWEDISH_DOLLAR_SHIFT_EURO";
+               #binding-cells = <0>;
+               bindings = <&kp m_DOLAR>, <&kp m_EURO>; /* $ € Mac */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
      };
@@ -237,14 +262,14 @@
                label = "WIN_COL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        | Q          | W mod      | F mod      | P          | B          |     | J          | L          | U mod      | Y mod      | Ö          | Å          |
-     &kp TAB      &kp Q        wHRML1(W,         F)       &kp P        &kp B              &kp J        &kp L        wHRMR1(U,         Y)       &kp _OO      &kp _OE    
+// | `          | Q          | W mod      | F mod      | P          | B          |     | J          | L          | U mod      | Y mod      | Ö          | Å          |
+     &kp _BTICK   &kp Q        wHRML1(W,         F)      &kp P        &kp B              &kp J        &kp L        wHRMR1(U,         Y)      &kp _OO      &kp _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC mod    | A  mod     | R mod      | S mod      | T mod      | G mod      |     | M  mod     | N mod      | E mod      | I          | O          | Ä          |
+// | ESC mod    | A  mod     | R mod      | S mod      | T mod      | G mod      |     | M  mod     | N mod      | E mod      | I mod      | O mod      | Ä mod      |
      wHRML2(ESC,       A,           R,           S,           T,           G)            wHRMR2(M,         N,           E,           I,           O,           _AE)
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | ' "        |
-     &kp _BSLH    &kp Z        wHRML3(X,         C,           D,           V)            wHRMR3(K,         H,        COMMA,        DOT)      &se_slsh     &se_quot
+// | SHIFT      | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | SHIFT      |
+     &kp LSHIFT   &kp Z        wHRML3(X,         C,           D,           V)            wHRMR3(K,         H,        COMMA,        DOT)      &se_slsh     &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &lt wNAV SPACE     &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -256,14 +281,14 @@
                label = "WIN_QRTY ";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å          |
-     &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P        &kp _OE    
+// | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I mod      | O mod      | P          | Å          |
+     &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        wHRMR1(I,        O)       &kp P        &kp _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC  CTRL  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä          |
- &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO      &kp _AE
+// | ESC  CTRL  | A          | S          | D          | F          | G          |     | H mod      | J mod      | K mod      | L          | Ö          | Ä          |
+ &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              wHRMR2(H,         J,           K,           L,       _OO,            _AE)
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' "        |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh     &se_quot
+// | SHIFT      | Z          | X          | C          | V          | B          |     | N mod      | M mod      | , mod      | . mod      | / ?        | SHIFT      |
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              wHRMR3(N,         M,       COMMA,         DOT)      &se_slsh     &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &kp SPACE          &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -281,8 +306,8 @@
 // | TOGGLE     | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
     &tog wNUMBER  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | "          |
-     &none        wSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &kp _DQUOT
+// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | ' "        |
+     &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | FUNC             | NAV SPACE        | ENTER            |     | =                | 0 SYM            | - _ NAV2         |
                           &mo wFUNC          &lt wNAV SPACE     &kp RET                  &kp _EQ            &lt wSYMBOL N0     &lt wNAV2 _MINUS 
@@ -300,8 +325,8 @@
 // |            | CTRL+A mod | CTRL+R mod | CTRL+S mod | CTRL+T mod | CTRL + G   |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        wSHRT2(A,         R,           S,           T,           G)            &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | "          |
-     &none        wSHRT3(Z,         X,           C,           D,           V)            &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
+// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
+     &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | =                | _                | - _              |
                           &none              &none              &none                    &kp _EQ            &kp _UNDER         &kp _MINUS
@@ -319,8 +344,8 @@
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            |            |            |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
-     &none        &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
+// | SHIFT      |            |            |            |            |            |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
+     &kp LSHIFT   &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | CAPS LOCK        | TOGGLE MOUSE     | TOGGLE NUMBER    |     |                  |                  |                  |
                           &kp CAPS           &tog wMOUSE        &tog wNUMBER              &none              &none              &none
@@ -332,14 +357,14 @@
                label = "wFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | WIN LAYER  | BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
-     &to WIN_COL  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR         &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
+// | WIN LAYER  | 1          | 2          | 3          | 4          | 5          |     | F12        | F7         | F8         | F9         |            | reset      |
+     &to WIN_COL  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            |            |
      &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT  &to WIN_QRTY        &kp F11      &kp F4       &kp F5       &kp F6       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            | CAPS       | COLEMAK    |     | F10        | F1         | F2         | F3         |            |            |
-     &none        &none        &none        &none        &kp CAPS     &to WIN_COL        &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
+// | BTCLR      | BT1        | BT2        | BT3        | BT4        | COLEMAK    |     | F10        | F1         | F2         | F3         |            |            |
+     &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &to WIN_COL        &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | DEL              | BSPC             | CAPS             |
                           &none              &none              &none                    &kp DEL            &kp BSPC           &kp CAPS
@@ -351,14 +376,14 @@
                label = "wSYMBOL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ` ~        | !          | @ £        | [ {        | ] }        | #          |     |            |            |            |            |            |            |
-     &btik_tld    &kp EXCL     &at_pnd      &se_lbrc     &se_rbrc     &kp HASH           &none        &none        &none        &none        &none        &none
+// | ~          | !          | @ £        | [ {        | ] }        | #          |     |            |            |            |            |            |            |
+     &w_TILDE     &kp EXCL     &w_at_pnd    &w_se_lbrc   &w_se_rbrc   &kp HASH           &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | § ½        | &          | $ €        | (          | )          | %          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
-     &par_hlf     &kp _AMPER   &dlr_eur     &kp _LPAR    &kp _RPAR    &kp PRCNT          &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
+// | £ µ        | &          | $ €        | (          | )          | %          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
+     &w_pnd_mic   &kp _AMPER   &w_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ¤ µ        | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            |            |
-     &cur_mcr     &se_pipe     &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &none
+// | \          | "|"        | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
+     &w_BSLH      &w_PIPE      &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPACE            | SPACE            | ENTER            |     |                  |                  |                  |  
                           &kp SPACE          &kp SPACE          &kp RET                  &none              &none              &none
@@ -389,14 +414,14 @@
                label = "MAC_COL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        | Q          | W mod      | F mod      | P          | B          |     | J          | L          | U mod      | Y mod      | Ö          | Å          |
-     &kp TAB      &kp Q        mHRML1(W,         F)      &kp P        &kp B              &kp J        &kp L        mHRMR1(U,         Y)      &kp _OO      &kp _OE    
+// | `          | Q          | W mod      | F mod      | P          | B          |     | J          | L          | U mod      | Y mod      | Ö          | Å          |
+     &kp _BTICK   &kp Q        mHRML1(W,         F)      &kp P        &kp B              &kp J        &kp L        mHRMR1(U,         Y)      &kp _OO      &kp _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ESC mod    | A  mod     | R mod      | S mod      | T mod      | G mod      |     | M  mod     | N mod      | E mod      | I          | O          | Ä          |
      mHRML2(ESC,       A,           R,           S,           T,           G)            mHRMR2(M,         N,           E,           I,           O,           _AE)
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | ' "        |
-     &kp _BSLH    &kp Z        mHRML3(X,         C,           D,           V)            mHRMR3(K,         H,        COMMA,        DOT)      &se_slsh     &se_quot
+// | \          | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | SHIFT      |
+     &kp m_BSLH    &kp Z        mHRML3(X,         C,           D,           V)            mHRMR3(K,         H,        COMMA,        DOT)      &se_slsh    &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &lt mNAV SPACE     &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -414,8 +439,8 @@
 // | ESC  CTRL  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä          |
  &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO      &kp _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' "        |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh     &se_quot
+// | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | SHIFT      |
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh     &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &kp SPACE          &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -433,8 +458,8 @@
 // | TOGGLE     | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
     &tog mNUMBER  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | "          |
-     &none        mSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &kp _DQUOT
+// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | ' "        |
+     &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | FUNC             | NAV SPACE        | ENTER            |     | =                | 0 SYM            | - _ NAV2         |
                           &mo mFUNC          &lt mNAV SPACE     &kp RET                  &kp _EQ            &lt mSYMBOL N0     &lt mNAV2 _MINUS 
@@ -452,8 +477,8 @@
 // |            | CTRL+A mod | CTRL+R mod | CTRL+S mod | CTRL+T mod | CTRL + G   |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        mSHRT2(A,         R,           S,           T,           G)            &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | "          |
-     &none        mSHRT3(Z,         X,           C,           D,           V)            &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
+// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
+     &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | =                | _                | - _              |
                           &none              &none              &none                    &kp _EQ            &kp _UNDER         &kp _MINUS
@@ -471,8 +496,8 @@
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            |            |            |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
-     &none        &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
+// | SHIFT      |            |            |            |            |            |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
+     &kp LSHIFT   &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | CAPS LOCK        | TOGGLE MOUSE     | TOGGLE NUMBER    |     |                  |                  |                  |
                           &kp CAPS           &tog mMOUSE        &tog mNUMBER              &none              &none              &none
@@ -484,14 +509,14 @@
                label = "mFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | WIN LAYER  | BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
-    &to WIN_COL  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_CLR         &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
+// | WIN LAYER  | 1          | 2          | 3          | 4          | 5          |     | F12        | F7         | F8         | F9         |            | reset      |
+    &to WIN_COL  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5              &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            |            |
      &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT  &to MAC_QRTY        &kp F11      &kp F4       &kp F5       &kp F6       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            | CAPS       | COLEMAK    |     | F10        | F1         | F2         | F3         |            |            |
-     &none        &none        &none        &none        &kp CAPS     &to MAC_COL        &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
+// | BTCLR      | BT1        | BT2        | BT3        | BT4        | COLEMAK    |     | F10        | F1         | F2         | F3         |            |            |
+     &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &to MAC_COL        &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | DEL              | BSPC             | CAPS             |
                           &none              &none              &none                    &kp DEL            &kp BSPC           &kp CAPS
@@ -503,14 +528,14 @@
                label = "mSYMBOL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ` ~        | !          | @ £        | [ {        | ] }        | #          |     |            |            |            |            |            |            |
-     &btik_tld    &kp EXCL     &at_pnd      &se_lbrc     &se_rbrc     &kp HASH           &none        &none        &none        &none        &none        &none
+// | ~          | !          | @ £        | [ {        | ] }        | #          |     |            |            |            |            |            |            |
+     &m_TILDE     &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | § ½        | &          | $ €        | (          | )          | %          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
-     &par_hlf     &kp _AMPER   &dlr_eur     &kp _LPAR    &kp _RPAR    &kp PRCNT          &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
+// | £ µ        | &          | $ €        | (          | )          | %          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
+     &m_pnd_mic   &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ¤ µ        | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            |            |
-     &cur_mcr     &se_pipe     &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &none
+// | \          | "|"        | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
+     &m_BSLH      &m_PIPE      &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPACE            | SPACE            | ENTER            |     |                  |                  |                  |  
                           &kp SPACE          &kp SPACE          &kp RET                  &none              &none              &none
