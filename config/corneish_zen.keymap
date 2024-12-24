@@ -313,7 +313,7 @@
                label = "wNAV2";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC DEFAULT|
+// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC TOGGLE |
      &none        &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &tog MAC_COL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
@@ -332,7 +332,7 @@
                label = "wFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | WIN DEFAULT| BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
+// | WIN TOGGLE | BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
     &tog WIN_COL  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR         &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            |            |
@@ -417,8 +417,8 @@
 // | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' "        |
      &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh     &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      | SPACE            | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
-                          &kp SPACE          &kp SPACE          &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
+//                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
+                          &lt mFUNC TAB      &kp SPACE          &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                >;
           };
@@ -465,7 +465,7 @@
                label = "mNAV2";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC DEFAULT|
+// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC TOGGLE |
      &none        &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE  &tog MAC_COL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
@@ -484,7 +484,7 @@
                label = "mFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | WIN DEFAULT| BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
+// | WIN TOGGLE | BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
   &tog WIN_COL   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_CLR         &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            |            |
