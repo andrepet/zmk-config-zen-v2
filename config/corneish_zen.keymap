@@ -319,8 +319,8 @@
                label = "wNAV";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | !          | @          | FIND       | CTRL + P   | GO-TO IDEA |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
-     &none        &kp EXCL     &at_pnd      wSHRT1(F,         P,           B)            &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
+// |            | !          | @ £        | FIND       | CTRL + P   | GO-TO IDEA |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
+     &none        &kp EXCL     &w_at_pnd     wSHRT1(F,         P,           B)            &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | CTRL+A mod | CTRL+R mod | CTRL+S mod | CTRL+T mod | CTRL + G   |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        wSHRT2(A,         R,           S,           T,           G)            &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
@@ -471,8 +471,8 @@
                label = "mNAV";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | !          | @          | FIND       | CTRL + P   | GO-TO IDEA |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
-     &none        &kp EXCL     &at_pnd      mSHRT1(F,         P,           B)            &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
+// |            | !          | @ £        | FIND       | CTRL + P   | GO-TO IDEA |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
+     &none        &kp EXCL     &m_at_pnd    mSHRT1(F,         P,           B)            &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | CTRL+A mod | CTRL+R mod | CTRL+S mod | CTRL+T mod | CTRL + G   |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        mSHRT2(A,         R,           S,           T,           G)            &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
