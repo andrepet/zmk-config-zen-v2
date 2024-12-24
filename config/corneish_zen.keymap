@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/mouse.h>
 
 // Layers for Windows
-#define wCOLEMAK  0
-#define wGAMING   1
+#define WIN_COL   0
+#define WIN_QRTY  1
 #define wNUMBER   2
 #define wNAV      3
 #define wNAV2     4
@@ -14,8 +14,8 @@
 #define wMOUSE    7
 
 // Layers for Mac
-#define mCOLEMAK  8
-#define mGAMING   9
+#define MAC_COL   8
+#define MAC_QRTY  9
 #define mNUMBER  10
 #define mNAV     11
 #define mNAV2    12
@@ -34,12 +34,12 @@
 
 // Home row mods macros for Mac
 #define mHRML1(k1,k2) &l_ht LC(LGUI) k1   &l_ht LS(LALT) k2
-#define mHRML2(k1,k2,k3,k4,k5,k6) &l_ht LCTRL k1   &l_ht LGUI k2   &l_ht LALT k3   &l_ht LCTRL k4   &l_ht LSHIFT k5   &l_ht LC(LS(LALT)) k6
-#define mHRML3(k1,k2,k3,k4) &l_ht LA(LGUI) k1   &l_ht LC(LALT) k2   &l_ht LS(LCTRL) k3   &l_ht LC(LS(LA(LGUI))) k4
+#define mHRML2(k1,k2,k3,k4,k5,k6) &l_ht LCTRL k1   &l_ht LCTRL k2   &l_ht LALT k3   &l_ht LGUI k4   &l_ht LSHIFT k5   &l_ht LC(LS(LALT)) k6
+#define mHRML3(k1,k2,k3,k4) &l_ht LA(LCTRL) k1   &l_ht LG(LALT) k2   &l_ht LS(LGUI) k3   &l_ht LC(LS(LA(LGUI))) k4
 
 #define mHRMR1(k1,k2) &r_ht RS(RALT) k1   &r_ht RC(RGUI) k2
-#define mHRMR2(k1,k2,k3,k4,k5,k6) &r_ht RC(RS(RALT)) k1   &r_ht RSHIFT k2   &r_ht RCTRL k3   &r_ht RALT k4   &r_ht RGUI k5   &r_ht RCTRL k6
-#define mHRMR3(k1,k2,k3,k4) &r_ht RC(RS(RA(RGUI))) k1   &r_ht RS(RCTRL) k2   &r_ht RC(RALT) k3   &r_ht RA(RGUI) k4
+#define mHRMR2(k1,k2,k3,k4,k5,k6) &r_ht RC(RS(RALT)) k1   &r_ht RSHIFT k2   &r_ht RGUI k3   &r_ht RALT k4   &r_ht RCTRL k5   &r_ht RCTRL k6
+#define mHRMR3(k1,k2,k3,k4) &r_ht RC(RS(RA(RGUI))) k1   &r_ht RS(RGUI) k2   &r_ht RG(RALT) k3   &r_ht RA(RCTRL) k4
 
 // Short commands macros for Windows
 #define wSHRT1(k1,k2,k3) &kp LC(k1)   &kp LC(k2)   &kp LA(LC(k3))
@@ -47,9 +47,9 @@
 #define wSHRT3(k1,k2,k3,k4,k5) &kp LC(k1)   &kp LC(k2)   &kp LC(k3)   &kp LC(k4)   &kp LC(k5)
 
 // Short commands macros for Mac
-#define mSHRT1(k1,k2,k3) &kp LC(k1)   &kp LC(k2)   &kp LA(LC(k3))
-#define mSHRT2(k1,k2,k3,k4,k5) &l_ht LCTRL LC(k1)   &l_ht LALT LC(k2)   &l_ht LGUI LC(k3)   &l_ht LSHIFT LC(k4)   &kp LC(k5)
-#define mSHRT3(k1,k2,k3,k4,k5) &kp LC(k1)   &kp LC(k2)   &kp LC(k3)   &kp LC(k4)   &kp LC(k5)
+#define mSHRT1(k1,k2,k3) &kp LG(k1)   &kp LG(k2)   &kp LA(LG(k3))
+#define mSHRT2(k1,k2,k3,k4,k5) &l_ht LCTRL LG(k1)   &l_ht LALT LG(k2)   &l_ht LGUI LG(k3)   &l_ht LSHIFT LG(k4)   &kp LG(k5)
+#define mSHRT3(k1,k2,k3,k4,k5) &kp LG(k1)   &kp LG(k2)   &kp LG(k3)   &kp LG(k4)   &kp LG(k5)
 
 // Special swedish character macro for WINDOWS
 #define _OE    LBKT                /* Å */
@@ -234,7 +234,7 @@
           compatible = "zmk,keymap";
 
           w_colemak_layer {
-               label = "wCOLEMAK";
+               label = "WIN_COL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        | Q          | W mod      | F mod      | P          | B          |     | J          | L          | U mod      | Y mod      | Ö          | Å          |
@@ -253,7 +253,7 @@
           };
 
           w_gaming_layer {
-               label = "wGAMING";
+               label = "WIN_QRTY ";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å          |
@@ -265,8 +265,8 @@
 // | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' "        |
      &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh     &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      | SPACE            | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
-                          &kp SPACE          &kp SPACE          &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
+//                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
+                          &lt wFUNC TAB      &kp SPACE          &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                >;
           };
@@ -313,8 +313,8 @@
                label = "wNAV2";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | GAMING     |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
-     &tog wGAMING  &none        &none        &none        &none        &none             &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
+// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC DEFAULT|
+     &none        &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &tog MAC_COL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
@@ -332,14 +332,14 @@
                label = "wFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | BTCLR      | BT1        | BT2        | BT3        | BT4        | BT5        |     | F12        | F7         | F8         | F9         |            | reset      |
-    &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4        &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
+// | WIN DEFAULT| BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
+    &tog WIN_COL  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR         &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | F11        | F4         | F5         | F6         |            |            |
-     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp F11      &kp F4       &kp F5       &kp F6       &none        &none 
+// |            | LGUI       | LALT       | LCTRL      | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            |            |
+     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT  &tog WIN_QRTY       &kp F11      &kp F4       &kp F5       &kp F6       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            | CAPS       |            |     | F10        | F1         | F2         | F3         |            |            |
-     &none        &none        &none        &none        &kp CAPS     &none              &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
+// |            |            |            |            | CAPS       | COLEMAK    |     | F10        | F1         | F2         | F3         |            |            |
+     &none        &none        &none        &none        &kp CAPS    &tog WIN_COL        &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | DEL              | BSPC             | CAPS             |
                           &none              &none              &none                    &kp DEL            &kp BSPC           &kp CAPS
@@ -386,7 +386,7 @@
           };
 
           m_colemak_layer {
-               label = "mCOLEMAK";
+               label = "MAC_COL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        | Q          | W mod      | F mod      | P          | B          |     | J          | L          | U mod      | Y mod      | Ö          | Å          |
@@ -405,7 +405,7 @@
           };
 
           m_gaming_layer {
-               label = "mGAMING";
+               label = "MAC_QRTY";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å          |
@@ -465,8 +465,8 @@
                label = "mNAV2";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | mGAMING    |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
-    &tog mGAMING  &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
+// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC DEFAULT|
+     &none        &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE  &tog MAC_COL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
@@ -484,14 +484,14 @@
                label = "mFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | BTCLR      | BT1        | BT2        | BT3        | BT4        | BT5        |     | F12        | F7         | F8         | F9         |            | reset      |
-    &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4        &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
+// | WIN DEFAULT| BT1        | BT2        | BT3        | BT4        | BTCLR      |     | F12        | F7         | F8         | F9         |            | reset      |
+  &tog WIN_COL   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bt BT_CLR         &kp F12      &kp F7       &kp F8       &kp F9       &none        &sys_reset
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | F11        | F4         | F5         | F6         |            |            |
-     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp F11      &kp F4       &kp F5       &kp F6       &none        &none 
+// |            | LGUI       | LALT       | LCTRL      | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            |            |
+     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT &tog MAC_QRTY        &kp F11      &kp F4       &kp F5       &kp F6       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            | CAPS       |            |     | F10        | F1         | F2         | F3         |            |            |
-     &none        &none        &none        &none        &kp CAPS     &none              &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
+// |            |            |            |            | CAPS       | COLEMAK    |     | F10        | F1         | F2         | F3         |            |            |
+     &none        &none        &none        &none        &kp CAPS   &tog MAC_COL         &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | DEL              | BSPC             | CAPS             |
                           &none              &none              &none                    &kp DEL            &kp BSPC           &kp CAPS
