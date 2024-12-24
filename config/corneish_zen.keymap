@@ -51,7 +51,7 @@
 #define mSHRT2(k1,k2,k3,k4,k5) &l_ht LCTRL LG(k1)   &l_ht LALT LG(k2)   &l_ht LGUI LG(k3)   &l_ht LSHIFT LG(k4)   &kp LG(k5)
 #define mSHRT3(k1,k2,k3,k4,k5) &kp LG(k1)   &kp LG(k2)   &kp LG(k3)   &kp LG(k4)   &kp LG(k5)
 
-// Special swedish character macro for WINDOWS
+// Special swedish character macro for Windows and Mac
 #define _OE    LBKT                /* Å */
 #define _AE    SQT                 /* Ä */
 #define _OO    SEMI                /* Ö */
@@ -377,13 +377,13 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ~          | !          | @ £        | [ {        | ] }        | #          |     |            |            |            |            |            |            |
-     &w_TILDE     &kp EXCL     &w_at_pnd    &w_se_lbrc   &w_se_rbrc   &kp HASH           &none        &none        &none        &none        &none        &none
+     &kp w_TILDE  &kp EXCL     &w_at_pnd    &w_se_lbrc   &w_se_rbrc   &kp HASH           &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | £ µ        | &          | $ €        | (          | )          | %          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
      &w_pnd_mic   &kp _AMPER   &w_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | \          | "|"        | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
-     &w_BSLH      &w_PIPE      &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
+     &kp w_BSLH   &kp w_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPACE            | SPACE            | ENTER            |     |                  |                  |                  |  
                           &kp SPACE          &kp SPACE          &kp RET                  &none              &none              &none
@@ -420,8 +420,8 @@
 // | ESC mod    | A  mod     | R mod      | S mod      | T mod      | G mod      |     | M  mod     | N mod      | E mod      | I          | O          | Ä          |
      mHRML2(ESC,       A,           R,           S,           T,           G)            mHRMR2(M,         N,           E,           I,           O,           _AE)
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | SHIFT      |
-     &kp m_BSLH    &kp Z        mHRML3(X,         C,           D,           V)            mHRMR3(K,         H,        COMMA,        DOT)      &se_slsh    &kp RSHIFT
+// | SHIFT      | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | SHIFT      |
+     &kp LSHIFT   &kp Z        mHRML3(X,         C,           D,           V)            mHRMR3(K,         H,        COMMA,        DOT)      &se_slsh     &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &lt mNAV SPACE     &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -529,13 +529,13 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ~          | !          | @ £        | [ {        | ] }        | #          |     |            |            |            |            |            |            |
-     &m_TILDE     &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &none        &none        &none        &none        &none        &none
+     &kp m_TILDE  &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | £ µ        | &          | $ €        | (          | )          | %          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
      &m_pnd_mic   &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | \          | "|"        | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
-     &m_BSLH      &m_PIPE      &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
+     &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPACE            | SPACE            | ENTER            |     |                  |                  |                  |  
                           &kp SPACE          &kp SPACE          &kp RET                  &none              &none              &none
