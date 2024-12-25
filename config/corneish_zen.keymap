@@ -395,14 +395,14 @@
                label = "wMOUSE";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        |            | SCROLL LEFT| MOUSE UP   |SCROLL RIGHT|            |     |            |            |            |            |            |            |
-     &kp TAB      &none        &mwh _MS_L   &mmv _MM_U  &mwh _MS_R   &none              &none        &none        &none        &none        &none        &none
+// | TAB        |            |            | MOUSE UP   |            | SCROLL UP  |     |WEB TAB LEFT|WEB TAB BACK|WEB TAB FRWD|WEB TAB RGHT|            |            |
+     &kp TAB      &none        &none        &mmv _MM_U   &none        &mwh _MS_U    &kp LS(LC(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)  &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |TOGGLE MOUSE|            | MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|            |     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | HOME mod   | END mod    |
-     &tog wMOUSE  &none        &mmv _MM_L   &mmv _MM_D   &mmv _MM_R  &none               wHRMR2(LEFT,      DOWN,        UP,          RIGHT,       HOME,        END)  
+// |TOGGLE MOUSE| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL RIGHT|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | HOME mod   | END mod    |
+     &tog wMOUSE  &mwh _MS_L   &mmv _MM_L   &mmv _MM_D   &mmv _MM_R   &mwh _MS_R         wHRMR2(LEFT,      DOWN,        UP,          RIGHT,       HOME,        END)  
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            | SCROLL DOWN| SCROLL UP  |            |     |            | LEFT CLICK | RIGHT CLICK|            |            |            |
-     &none        &none        &none        &mwh _MS_D   &mwh _MS_U   &none              &none        &mkp LCLK    &mkp RCLK    &none        &none        &none
+// | SHIFT      |            |            | RIGHT CLICK| LEFT CLICK | SCROLL DOWN|     |MIDDLE CLICK| LEFT CLICK | RIGHT CLICK|            |            |            |
+     &kp LSHIFT   &none        &none        &mkp RCLK    &mkp LCLK    &mwh _MS_D         &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPC              | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
                           &kp SPACE          &mkp LCLK          &mkp RCLK                &none              &none              &none
@@ -547,16 +547,16 @@
                label = "mMOUSE";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        |            | SCROLL LEFT| MOUSE UP   |SCROLL RIGHT|            |     |            |            |            |            |            |            |
-     &kp TAB      &none        &mwh _MS_L   &mmv _MM_U   &mwh _MS_R   &none              &none        &none        &none        &none        &none        &none
+// | TAB        |            |            | MOUSE UP   |            | SCROLL UP  |     |WEB TAB LEFT|WEB TAB BACK|WEB TAB FRWD|WEB TAB RGHT|            |            |
+     &kp TAB      &none        &none        &mmv _MM_U   &none        &mwh _MS_U    &kp LS(LC(TAB))  &kp LG(LEFT)  &kp LG(RIGHT)  &kp LC(TAB)  &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |TOGGLE MOUSE|            | MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|            |     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | HOME mod   | END mod    |
-    &tog mMOUSE   &none        &mmv _MM_L   &mmv _MM_D   &mmv _MM_R   &none              mHRMR2(LEFT,      DOWN,        UP,          RIGHT,       HOME,        END)  
+// |TOGGLE MOUSE| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL RIGHT|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | HOME mod   | END mod    |
+     &tog wMOUSE  &mwh _MS_L   &mmv _MM_L   &mmv _MM_D   &mmv _MM_R   &mwh _MS_R         mHRMR2(LEFT,      DOWN,        UP,          RIGHT,       HOME,        END)  
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            | SCROLL DOWN| SCROLL UP  |            |     |            | LEFT CLICK | RIGHT CLICK|            |            |            |
-     &none        &none        &none        &mwh _MS_D   &mwh _MS_U   &none              &none        &mkp LCLK    &mkp RCLK    &none        &none        &none
+// | SHIFT      |            |            | RIGHT CLICK| LEFT CLICK | SCROLL DOWN|     |MIDDLE CLICK| LEFT CLICK | RIGHT CLICK|            |            |            |
+     &kp LSHIFT   &none        &none        &mkp RCLK    &mkp LCLK    &mwh _MS_D         &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      | SPACE            | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
+//                      | SPC              | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
                           &kp SPACE          &mkp LCLK          &mkp RCLK                &none              &none              &none
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                >;
