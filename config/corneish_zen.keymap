@@ -135,7 +135,6 @@
      behaviors {
           r_ht: right_hold_tap {
                compatible = "zmk,behavior-hold-tap";
-               label = "RIGHT_POSITIONAL_HOLD_TAP";
                #binding-cells = <2>;
                tapping-term-ms = <175>;
                quick_tap_ms = <200>;
@@ -150,7 +149,6 @@
           };
           l_ht: left_hold_tap {
                compatible = "zmk,behavior-hold-tap";
-               label = "LEFT_POSITIONAL_HOLD_TAP";
                #binding-cells = <2>;
                tapping-term-ms = <175>;
                quick_tap_ms = <200>;
@@ -165,77 +163,66 @@
           };
           se_scln: semi_colon_shift_colon {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "SWEDISH_SEMICOLON";
                #binding-cells = <0>;
                bindings = <&kp _SEMIC>, <&kp _COLON>; /* ; : */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           se_quot: single_quote_shift_double_quote {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "SWEDISH_QUOTE";
                #binding-cells = <0>;
                bindings = <&kp _SQUOT>, <&kp _DQUOT>; /* ' " */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           se_slsh: slash_shift_question {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "SWEDISH_SLASH_QUESTION";
                #binding-cells = <0>;
                bindings = <&kp _FSLH>, <&kp _QMARK>; /* / ? */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           w_se_lbrc: w_se_left_bracket {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "WINDOWS_SWEDISH_LEFT_BRACKET";
                #binding-cells = <0>;
                bindings = <&kp w_LBKT>, <&kp w_LBRC>; /* [ { Windows */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           m_se_lbrc: m_se_left_bracket {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "MAC_SWEDISH_LEFT_BRACKET";
                #binding-cells = <0>;
                bindings = <&kp m_LBKT>, <&kp m_LBRC>; /* [ { Mac */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           w_se_rbrc: w_se_right_bracket {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "WINDOWS_SWEDISH_RIGHT_BRACKET";
                #binding-cells = <0>;
                bindings = <&kp w_RBKT>, <&kp w_RBRC>; /* ] } Windows */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           m_se_rbrc: m_se_right_bracket {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "MAC_SWEDISH_RIGHT_BRACKET";
                #binding-cells = <0>;
                bindings = <&kp m_RBKT>, <&kp m_RBRC>; /* ] } Mac */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           w_at_pnd: w_at_shift_pound {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "WINDOWS_SWEDISH_AT_SHIFT_POUND";
                #binding-cells = <0>;
                bindings = <&kp w_AT>, <&kp w_POUND>; /* @ £  Windows */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           m_at_pnd: m_at_shift_pound {            
                compatible = "zmk,behavior-mod-morph";            
-               label = "MAC_SWEDISH_AT_SHIFT_POUND";
                #binding-cells = <0>;
                bindings = <&kp m_AT>, <&kp m_POUND>; /* @ £ Mac */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           w_dlr_eur: w_dollar_shift_eur {
                compatible = "zmk,behavior-mod-morph";            
-               label = "WINDOWS_SWEDISH_DOLLAR_SHIFT_EURO";
                #binding-cells = <0>;
                bindings = <&kp w_DOLAR>, <&kp w_EURO>; /* $ € Windows */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           m_dlr_eur: m_dollar_shift_eur {
                compatible = "zmk,behavior-mod-morph";            
-               label = "MAC_SWEDISH_DOLLAR_SHIFT_EURO";
                #binding-cells = <0>;
                bindings = <&kp m_DOLAR>, <&kp m_EURO>; /* $ € Mac */
                mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -246,7 +233,7 @@
           compatible = "zmk,keymap";
 
           w_colemak_layer {
-               label = "WIN_COL";
+               display-name = "WIN_COL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | `          | Q          | W mod      | F mod      | P          | B          |     | J          | L          | U mod      | Y mod      | Ö          | Å          |
@@ -265,7 +252,7 @@
           };
 
           w_gaming_layer {
-               label = "WIN_QRTY ";
+               display-name = "WIN_QRTY ";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I mod      | O mod      | P          | Å          |
@@ -284,7 +271,7 @@
           };
 
           w_number_layer {
-               label = "wNUMBER";
+               display-name = "wNUMBER";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        | 1          | 2          | 3          | 4          | 5          |     | 6          | 7          | 8          | 9          | 0          | - _        |
@@ -303,7 +290,7 @@
           };
 
           w_navigation_layer {
-               label = "wNAV";
+               display-name = "wNAV";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | !          | @ £        | FIND       | CTRL + P   | GO-TO IDEA |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
@@ -322,7 +309,7 @@
           };
 
           w_navigation_2_layer {
-               label = "wNAV2";
+               display-name = "wNAV2";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC LAYER  |
@@ -341,7 +328,7 @@
           };
 
           w_function_layer {
-               label = "wFUNC";
+               display-name = "wFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | WIN LAYER  | 1          | 2          | 3          | 4          | 5          |     | F12        | F7         | F8         | F9         |            | reset      |
@@ -360,7 +347,7 @@
           };
 
           w_symbol_layer {
-               label = "wSYMBOL";
+               display-name = "wSYMBOL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ~          | !          | @ £        | [ {        | ] }        | #          |     |            |            |            |            |            |            |
@@ -379,7 +366,7 @@
           };
 
           w_mouse_layer {
-               label = "wMOUSE";
+               display-name = "wMOUSE";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        |            |            | MOUSE UP   |            | SCROLL UP  |     |WEB TAB LEFT|WEB TAB BACK|WEB TAB FRWD|WEB TAB RGHT|            |            |
@@ -398,7 +385,7 @@
           };
 
           m_colemak_layer {
-               label = "MAC_COL";
+               display-name = "MAC_COL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | `          | Q          | W mod      | F mod      | P          | B          |     | J          | L          | U mod      | Y mod      | Ö          | Å          |
@@ -417,7 +404,7 @@
           };
 
           m_gaming_layer {
-               label = "MAC_QRTY";
+               display-name = "MAC_QRTY";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å          |
@@ -436,7 +423,7 @@
           };
 
           m_number_layer {
-               label = "mNUMBER";
+               display-name = "mNUMBER";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        | 1          | 2          | 3          | 4          | 5          |     | 6          | 7          | 8          | 9          | 0          | - _        |
@@ -455,7 +442,7 @@
           };
 
           m_navigation_layer {
-               label = "mNAV";
+               display-name = "mNAV";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | !          | @ £        | FIND       | CTRL + P   | GO-TO IDEA |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
@@ -474,7 +461,7 @@
           };
 
           m_navigation_2_layer {
-               label = "mNAV2";
+               display-name = "mNAV2";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC LAYER  |
@@ -493,7 +480,7 @@
           };
 
           m_function_layer {
-               label = "mFUNC";
+               display-name = "mFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | WIN LAYER  | 1          | 2          | 3          | 4          | 5          |     | F12        | F7         | F8         | F9         |            | reset      |
@@ -512,7 +499,7 @@
           };
 
           m_symbol_layer {
-               label = "mSYMBOL";
+               display-name = "mSYMBOL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ~          | !          | @ £        | [ {        | ] }        | #          |     |            |            |            |            |            |            |
@@ -531,7 +518,7 @@
           };
 
           m_mouse_layer {
-               label = "mMOUSE";
+               display-name = "mMOUSE";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        |            |            | MOUSE UP   |            | SCROLL UP  |     |WEB TAB LEFT|WEB TAB BACK|WEB TAB FRWD|WEB TAB RGHT|            |            |
