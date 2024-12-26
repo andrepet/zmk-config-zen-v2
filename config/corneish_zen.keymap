@@ -133,9 +133,10 @@
           r_ht: right_hold_tap {
                compatible = "zmk,behavior-hold-tap";
                #binding-cells = <2>;
-               tapping-term-ms = <175>;
-               quick_tap_ms = <200>;
                flavor = "tap-preferred";
+               tapping-term-ms = <175>;
+               quick-tap-ms = <200>;
+               require-prior-idle-ms = <125>;
                bindings = <&kp>, <&kp>;
                hold-trigger-key-positions = <
                     0  1  2  3  4  5 
@@ -147,9 +148,10 @@
           l_ht: left_hold_tap {
                compatible = "zmk,behavior-hold-tap";
                #binding-cells = <2>;
-               tapping-term-ms = <175>;
-               quick_tap_ms = <200>;
                flavor = "tap-preferred";
+               tapping-term-ms = <175>;
+               quick-tap-ms = <200>;
+               require-prior-idle-ms = <125>;
                bindings = <&kp>, <&kp>;
                hold-trigger-key-positions = <
                     6  7  8  9 10 11
