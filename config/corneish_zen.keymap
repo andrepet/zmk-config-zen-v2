@@ -1,7 +1,11 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/mouse.h>
+
+// Override default movement or scrolling max velocities
+// #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+// #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#include <dt-bindings/zmk/pointing.h>
 
 // Layers for Windows
 #define WIN_COL   0
@@ -102,26 +106,19 @@
 #define _ACUTE EQUAL               /* ´ */
 #define _BTICK LS(EQUAL)           /* ` */
 
-// Define experimental mouse movement settings
-#define U_MOUSE_MOVE_MAX 1400                     /* <--- New max speed setting (default: 600) */
-#define _MM_U MOVE_VERT(-U_MOUSE_MOVE_MAX)
-#define _MM_D MOVE_VERT(U_MOUSE_MOVE_MAX)
-#define _MM_L MOVE_HOR(-U_MOUSE_MOVE_MAX)
-#define _MM_R MOVE_HOR(U_MOUSE_MOVE_MAX)
-
 &mmv {
-     time-to-max-speed-ms = <400>;                /* <--- How long time until max speed is reached (default: 500) */
+    // x-input-code = <INPUT_REL_X>;
+    // y-input-code = <INPUT_REL_Y>;
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <1>;
 };
 
-// Define experimental mouse scroll settings
-#define U_MOUSE_SCROLL_MAX 75                     /* <--- New max speed setting (default: 10) */
-#define _MS_U SCROLL_VERT(U_MOUSE_SCROLL_MAX)
-#define _MS_D SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
-#define _MS_L SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
-#define _MS_R SCROLL_HOR(U_MOUSE_SCROLL_MAX)
 
-&mwh {
-     time-to-max-speed-ms = <500>;                /* <--- How long time until max speed is reached */
+&msc {
+    // x-input-code = <INPUT_REL_HWHEEL>;
+    // y-input-code = <INPUT_REL_WHEEL>;
+    time-to-max-speed-ms = <300>;
+    acceleration-exponent = <1>;
 };
 
 / {
@@ -370,13 +367,13 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        |            |            | MOUSE UP   |            | SCROLL UP  |     |WEB TAB LEFT|WEB TAB BACK|WEB TAB FRWD|WEB TAB RGHT|            |            |
-     &kp TAB      &none        &none        &mmv _MM_U   &none        &mwh _MS_U    &kp LS(LC(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)  &none        &none
+     &kp TAB      &none        &none      &mmv MOVE_UP   &none       &msc SCRL_UP  &kp LS(LC(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)  &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |TOGGLE MOUSE| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL RIGHT|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | HOME mod   | END mod    |
-     &tog wMOUSE  &mwh _MS_L   &mmv _MM_L   &mmv _MM_D   &mmv _MM_R   &mwh _MS_R         wHRMR2(LEFT,      DOWN,        UP,          RIGHT,       HOME,        END)  
+&tog wMOUSE  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT  wHRMR2(LEFT,     DOWN,     UP,     RIGHT,     HOME,     END)   
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      |            |            | RIGHT CLICK| LEFT CLICK | SCROLL DOWN|     |MIDDLE CLICK| LEFT CLICK | RIGHT CLICK|            |            |            |
-     &kp LSHIFT   &none        &none        &mkp RCLK    &mkp LCLK    &mwh _MS_D         &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
+     &kp LSHIFT   &none        &none        &mkp RCLK    &mkp LCLK    &msc SCRL_DOWN         &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPC              | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
                           &kp SPACE          &mkp LCLK          &mkp RCLK                &none              &none              &none
@@ -522,13 +519,13 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        |            |            | MOUSE UP   |            | SCROLL UP  |     |WEB TAB LEFT|WEB TAB BACK|WEB TAB FRWD|WEB TAB RGHT|            |            |
-     &kp TAB      &none        &none        &mmv _MM_U   &none        &mwh _MS_U    &kp LS(LC(TAB))  &kp LG(LEFT)  &kp LG(RIGHT)  &kp LC(TAB)  &none        &none
+     &kp TAB      &none        &none       &mmv MOVE_UP  &none      &msc SCRL_UP    &kp LS(LC(TAB))  &kp LG(LEFT)  &kp LG(RIGHT)  &kp LC(TAB)  &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |TOGGLE MOUSE| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL RIGHT|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | HOME mod   | END mod    |
-     &tog wMOUSE  &mwh _MS_L   &mmv _MM_L   &mmv _MM_D   &mmv _MM_R   &mwh _MS_R         mHRMR2(LEFT,      DOWN,        UP,          RIGHT,       HOME,        END)  
+&tog wMOUSE  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT  mHRMR2(LEFT,     DOWN,     UP,     RIGHT,     HOME,     END)  
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      |            |            | RIGHT CLICK| LEFT CLICK | SCROLL DOWN|     |MIDDLE CLICK| LEFT CLICK | RIGHT CLICK|            |            |            |
-     &kp LSHIFT   &none        &none        &mkp RCLK    &mkp LCLK    &mwh _MS_D         &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
+     &kp LSHIFT   &none        &none        &mkp RCLK    &mkp LCLK    &msc SCRL_DOWN         &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPC              | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
                           &kp SPACE          &mkp LCLK          &mkp RCLK                &none              &none              &none
