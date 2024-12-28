@@ -178,6 +178,12 @@
                bindings = <&kp _FSLH>, <&kp _QMARK>; /* / ? */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
+          w_se_pipe: w_se_pipe {            
+               compatible = "zmk,behavior-mod-morph";            
+               #binding-cells = <0>;
+               bindings = <&kp w_PIPE>, <&kp w_BSLH>; /* [ { Windows */
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
           w_se_lbrc: w_se_left_bracket {            
                compatible = "zmk,behavior-mod-morph";            
                #binding-cells = <0>;
@@ -355,8 +361,8 @@
 // | ¨ ^        | &          | $ €        | (          | )          | %          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
      &kp _UPDOTS  &kp _AMPER   &w_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | "|"        | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
-     &kp w_BSLH   &kp w_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
+// | \          | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
+     &kp w_BSLH   &w_se_pipe   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPACE            | SPACE            | ENTER            |     |                  |                  |                  |  
                           &kp SPACE          &kp SPACE          &kp RET                  &none              &none              &none
@@ -507,7 +513,7 @@
 // | ¨ ^        | &          | $ €        | (          | )          | %          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
      &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | "|"        | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
+// | \          | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
      &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | SPACE            | SPACE            | ENTER            |     |                  |                  |                  |  
