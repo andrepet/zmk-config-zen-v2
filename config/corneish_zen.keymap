@@ -247,8 +247,8 @@
 // | ESC mod    | A  mod     | R mod      | S mod      | T mod      | G mod      |     | M  mod     | N mod      | E mod      | I mod      | O mod      | Ä mod      |
      wHRML2(ESC,       A,           R,           S,           T,           G)            wHRMR2(M,         N,           E,           I,           O,           _AE)
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | SHIFT      |
-     &kp LSHIFT   &kp Z        wHRML3(X,         C,           D,           V)            wHRMR3(K,         H,        COMMA,        DOT)      &se_slsh     &kp RSHIFT
+// | \          | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | ' "        |
+     &kp w_BSLH   &kp Z        wHRML3(X,         C,           D,           V)            wHRMR3(K,         H,        COMMA,        DOT)      &se_slsh     &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &lt wNAV SPACE     &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -266,8 +266,8 @@
 // | ESC  CTRL  | A          | S          | D          | F          | G          |     | H mod      | J mod      | K mod      | L          | Ö          | Ä          |
  &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              wHRMR2(H,         J,           K,           L,       _OO,            _AE)
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X          | C          | V          | B          |     | N mod      | M mod      | , mod      | . mod      | / ?        | SHIFT      |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              wHRMR3(N,         M,       COMMA,         DOT)      &se_slsh     &kp RSHIFT
+// | SHIFT      | Z          | X          | C          | V          | B          |     | N mod      | M mod      | , mod      | . mod      | / ?        | ' "        |
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              wHRMR3(N,         M,       COMMA,         DOT)      &se_slsh     &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &kp SPACE          &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -285,8 +285,8 @@
 // | TOGGLE     | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
     &tog wNUMBER  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | ' "        |
-     &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &se_quot
+// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | "          |
+     &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &kp _DQUOT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | FUNC             | NAV SPACE        | ENTER            |     | =                | 0 SYM            | - _ NAV2         |
                           &mo wFUNC          &lt wNAV SPACE     &kp RET                  &kp _EQ            &lt wSYMBOL N0     &lt wNAV2 _MINUS 
@@ -304,8 +304,8 @@
 // |            | CTRL+A mod | CTRL+R mod | CTRL+S mod | CTRL+T mod | CTRL + G   |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        wSHRT2(A,         R,           S,           T,           G)            &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
-     &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &se_quot
+// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | "          |
+     &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | =                | _                | - _              |
                           &none              &none              &none                    &kp _EQ            &kp _UNDER         &kp _MINUS
@@ -323,8 +323,8 @@
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      |            |            |            |            |            |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
-     &kp LSHIFT   &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &se_quot
+// | SHIFT      |            |            |            |            |            |     | <<         | vol-       | vol+       | >>         | :          | "          |
+     &kp LSHIFT   &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | CAPS LOCK        | TOGGLE MOUSE     | TOGGLE NUMBER    |     |                  |                  |                  |
                           &kp CAPS           &tog wMOUSE        &tog wNUMBER              &none              &none              &none
@@ -399,8 +399,8 @@
 // | ESC mod    | A  mod     | R mod      | S mod      | T mod      | G mod      |     | M  mod     | N mod      | E mod      | I          | O          | Ä          |
      mHRML2(ESC,       A,           R,           S,           T,           G)            mHRMR2(M,         N,           E,           I,           O,           _AE)
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | SHIFT      |
-     &kp LSHIFT   &kp Z        mHRML3(X,         C,           D,           V)            mHRMR3(K,         H,        COMMA,        DOT)      &se_slsh     &kp RSHIFT
+// | \          | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | ' "        |
+     &kp m_BSLH   &kp Z        mHRML3(X,         C,           D,           V)            mHRMR3(K,         H,        COMMA,        DOT)      &se_slsh     &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &lt mNAV SPACE     &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -418,8 +418,8 @@
 // | ESC  CTRL  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä          |
  &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO      &kp _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | SHIFT      |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh     &kp RSHIFT
+// | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' "        |
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh     &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &kp SPACE          &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -437,8 +437,8 @@
 // | TOGGLE     | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
     &tog mNUMBER  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | ' "        |
-     &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &se_quot
+// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | "          |
+     &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &kp _DQUOT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | FUNC             | NAV SPACE        | ENTER            |     | =                | 0 SYM            | - _ NAV2         |
                           &mo mFUNC          &lt mNAV SPACE     &kp RET                  &kp _EQ            &lt mSYMBOL N0     &lt mNAV2 _MINUS 
@@ -456,8 +456,8 @@
 // |            | CTRL+A mod | CTRL+R mod | CTRL+S mod | CTRL+T mod | CTRL + G   |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        mSHRT2(A,         R,           S,           T,           G)            &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
-     &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &se_quot
+// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | "          |
+     &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | =                | _                | - _              |
                           &none              &none              &none                    &kp _EQ            &kp _UNDER         &kp _MINUS
@@ -475,8 +475,8 @@
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
      &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      |            |            |            |            |            |     | <<         | vol-       | vol+       | >>         | :          | ' "        |
-     &kp LSHIFT   &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &se_quot
+// | SHIFT      |            |            |            |            |            |     | <<         | vol-       | vol+       | >>         | :          | "          |
+     &kp LSHIFT   &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | CAPS LOCK        | TOGGLE MOUSE     | TOGGLE NUMBER    |     |                  |                  |                  |
                           &kp CAPS           &tog mMOUSE        &tog mNUMBER              &none              &none              &none
