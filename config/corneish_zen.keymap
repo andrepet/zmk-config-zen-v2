@@ -338,8 +338,8 @@
                display-name = "wFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        | 1          | 2          | 3          | 4          | WIN LAYER  |     | F12        | F7         | F8         | F9         |            | MAC LAYER  |
-     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &to WIN_COL        &kp F12      &kp F7       &kp F8       &kp F9       &none        &to MAC_COL
+// | TAB        | 1          | 2          | 3          | 4          | 5          |     | F12        | F7         | F8         | F9         |            | MAC LAYER  |
+     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp F12      &kp F7       &kp F8       &kp F9       &none        &to MAC_COL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | reset LEFT | LGUI       | LALT       | LCTRL      | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            | reset RIGHT|
      &sys_reset   &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT  &to WIN_QRTY        &kp F11      &kp F4       &kp F5       &kp F6       &none        &sys_reset 
@@ -490,14 +490,14 @@
                display-name = "mFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        | 1          | 2          | 3          | 4          | WIN LAYER  |     | F12        | F7         | F8         | F9         |            | MAC LAYER  |
-     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &to WIN_COL        &kp F12      &kp F7       &kp F8       &kp F9       &none        &to MAC_COL
+// | TAB        | 1          | 2          | 3          | 4          | 5          |     | F12        | F7         | F8         | F9         |            | WIN LAYER  |
+     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp F12      &kp F7       &kp F8       &kp F9       &none        &to WIN_COL 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | reset LEFT | LCTRL      | LALT       | LGUI       | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            | reset RIGHT|
      &sys_reset   &kp LCTRL    &kp LALT     &kp LGUI     &kp LSHIFT  &to MAC_QRTY        &kp F11      &kp F4       &kp F5       &kp F6       &none        &sys_reset 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | BTCLR      | BT1        | BT2        | BT3        | BT4        | COLEMAK    |     | F10        | F1         | F2         | F3         | / ?        |            |
-     &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &to WIN_COL        &kp F10      &kp F1       &kp F2       &kp F3       &se_slsh     &trans 
+     &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &to MAC_COL        &kp F10      &kp F1       &kp F2       &kp F3       &se_slsh     &trans 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | DEL              | BSPC             | CAPS             |
                           &none              &none              &none                    &kp DEL            &kp BSPC           &kp CAPS
