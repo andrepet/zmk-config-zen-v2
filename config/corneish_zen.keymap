@@ -38,11 +38,11 @@
 
 // Home row mods macros for Mac
 #define mHRML1(k1,k2) &l_ht LC(LGUI) k1   &l_ht LS(LALT) k2
-#define mHRML2(k1,k2,k3,k4,k5,k6) &l_ht LCTRL k1   &l_ht LCTRL k2   &l_ht LALT k3   &l_ht LGUI k4   &l_ht LSHIFT k5   &l_ht LC(LS(LALT)) k6
+#define mHRML2(k1,k2,k3,k4,k5,k6) &l_ht LGUI k1   &l_ht LCTRL k2   &l_ht LALT k3   &l_ht LGUI k4   &l_ht LSHIFT k5   &l_ht LC(LS(LALT)) k6
 #define mHRML3(k1,k2,k3,k4) &l_ht LA(LCTRL) k1   &l_ht LG(LALT) k2   &l_ht LS(LGUI) k3   &l_ht LC(LS(LA(LGUI))) k4
 
 #define mHRMR1(k1,k2) &r_ht RS(RALT) k1   &r_ht RC(RGUI) k2
-#define mHRMR2(k1,k2,k3,k4,k5,k6) &r_ht RC(RS(RALT)) k1   &r_ht RSHIFT k2   &r_ht RGUI k3   &r_ht RALT k4   &r_ht RCTRL k5   &r_ht RCTRL k6
+#define mHRMR2(k1,k2,k3,k4,k5,k6) &r_ht RC(RS(RALT)) k1   &r_ht RSHIFT k2   &r_ht RGUI k3   &r_ht RALT k4   &r_ht RCTRL k5   &r_ht RGUI k6
 #define mHRMR3(k1,k2,k3,k4) &r_ht RC(RS(RA(RGUI))) k1   &r_ht RS(RGUI) k2   &r_ht RG(RALT) k3   &r_ht RA(RCTRL) k4
 
 // Short commands macros for Windows
@@ -160,6 +160,14 @@
                 38 39 40 41
                >;
           };
+          skq: sticky_key_quick_release {
+               compatible = "zmk,behavior-sticky-key";
+               #binding-cells = <1>;
+               bindings = <&kp>;
+               release-after-ms = <5000>;
+               quick-release; // deactivate the sticky key on the next key being pressed, as opposed to released
+                ignore-modifiers; // ensures sticky key modifier will get combined in chain, callum-style mods 
+          };
           se_scln: semi_colon_shift_colon {            
                compatible = "zmk,behavior-mod-morph";            
                #binding-cells = <0>;
@@ -241,14 +249,14 @@
                display-name = "WIN_COL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | `          | Q          | W mod      | F mod      | P          | B          |     | J          | L          | U mod      | Y mod      | Ö          | Å          |
-     &kp _BTICK   &kp Q        wHRML1(W,         F)      &kp P        &kp B              &kp J        &kp L        wHRMR1(U,         Y)      &kp _OO      &kp _OE    
+// | `          | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ö          | Å          |
+     &kp _BTICK   &kp Q        &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _OO      &kp _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC mod    | A  mod     | R mod      | S mod      | T mod      | G mod      |     | M  mod     | N mod      | E mod      | I mod      | O mod      | Ä mod      |
-     wHRML2(ESC,       A,           R,           S,           T,           G)            wHRMR2(M,         N,           E,           I,           O,           _AE)
+// | ESC  CTRL  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ä  CTRL    |
+&l_ht LCTRL ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O      &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | ' "        |
-     &kp w_BSLH   &kp Z        wHRML3(X,         C,           D,           V)            wHRMR3(K,         H,        COMMA,        DOT)      &se_slsh     &se_quot
+// | SHIFT      | Z          | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?        | ' "  SHIFT |
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT      &se_slsh   &r_ht RSHIFT &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &lt wNAV SPACE     &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -260,14 +268,14 @@
                display-name = "WIN_QRTY ";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I mod      | O mod      | P          | Å          |
-     &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        wHRMR1(I,        O)       &kp P        &kp _OE    
+// | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å          |
+     &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P        &kp _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC  CTRL  | A          | S          | D          | F          | G          |     | H mod      | J mod      | K mod      | L          | Ö          | Ä          |
- &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              wHRMR2(H,         J,           K,           L,       _OO,            _AE)
+// | ESC  CTRL  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä  CTRL    |
+ &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO    &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X          | C          | V          | B          |     | N mod      | M mod      | , mod      | . mod      | / ?        | ' "        |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              wHRMR3(N,         M,       COMMA,         DOT)      &se_slsh     &se_quot
+// | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' "  SHIFT |
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh   &r_ht RSHIFT &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &kp SPACE          &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -299,10 +307,10 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | !          | @ £        | FIND       | CTRL + P   | GO-TO IDEA |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
-     &none        &kp EXCL     &w_at_pnd     wSHRT1(F,         P,           B)            &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
+     &trans       &kp EXCL     &w_at_pnd     wSHRT1(F,         P,           B)           &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | CTRL+A mod | CTRL+R mod | CTRL+S mod | CTRL+T mod | CTRL + G   |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
-     &none        wSHRT2(A,         R,           S,           T,           G)            &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
+// |            | LGUI 1 shot| LALT 1 shot|LCTRL 1 shot|LSHFT 1 shot| CTRL + G   |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
+     &trans       &skq LGUI    &skq LALT   &skq LCTRL   &skq LSHIFT   &kp LC(G)          &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | "          |
      &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
@@ -317,11 +325,11 @@
                display-name = "wNAV2";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC LAYER  |
-     &none        &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &to MAC_COL
+// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
+     &trans       &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
-     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
+     &trans       &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      |            |            |            |            |            |     | <<         | vol-       | vol+       | >>         | :          | "          |
      &kp LSHIFT   &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
@@ -336,14 +344,14 @@
                display-name = "wFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | WIN LAYER  | 1          | 2          | 3          | 4          | 5          |     | F12        | F7         | F8         | F9         |            |            |
-     &to WIN_COL  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp F12      &kp F7       &kp F8       &kp F9       &none        &none
+// | TAB        | 1          | 2          | 3          | 4          | WIN LAYER  |     | F12        | F7         | F8         | F9         |            | MAC LAYER  |
+     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &to WIN_COL        &kp F12      &kp F7       &kp F8       &kp F9       &none        &to MAC_COL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | reset LEFT | LGUI       | LALT       | LCTRL      | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            | reset RIGHT|
      &sys_reset   &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT  &to WIN_QRTY        &kp F11      &kp F4       &kp F5       &kp F6       &none        &sys_reset 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | BTCLR      | BT1        | BT2        | BT3        | BT4        | COLEMAK    |     | F10        | F1         | F2         | F3         |            |            |
-     &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &to WIN_COL        &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
+// | BTCLR      | BT1        | BT2        | BT3        | BT4        | COLEMAK    |     | F10        | F1         | F2         | F3         | / ?        |            |
+     &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &to WIN_COL        &kp F10      &kp F1       &kp F2       &kp F3       &se_slsh     &trans 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | DEL              | BSPC             | CAPS             |
                           &none              &none              &none                    &kp DEL            &kp BSPC           &kp CAPS
@@ -383,8 +391,8 @@
 // | SHIFT      |            |            | RIGHT CLICK| LEFT CLICK | SCROLL DOWN|     |MIDDLE CLICK| LEFT CLICK | RIGHT CLICK|            |            |            |
      &kp LSHIFT   &none        &none        &mkp RCLK    &mkp LCLK    &msc SCRL_DOWN         &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      | SPC              | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
-                          &kp SPACE          &mkp LCLK          &mkp RCLK                &none              &none              &none
+//                      |MIDDLE CLICK      | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
+                          &mkp MCLK          &mkp LCLK          &mkp RCLK                &none              &none              &none
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                >;
           };
@@ -393,14 +401,14 @@
                display-name = "MAC_COL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | `          | Q          | W mod      | F mod      | P          | B          |     | J          | L          | U mod      | Y mod      | Ö          | Å          |
-     &kp _BTICK   &kp Q        mHRML1(W,         F)      &kp P        &kp B              &kp J        &kp L        mHRMR1(U,         Y)      &kp _OO      &kp _OE    
+// | `          | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ö          | Å          |
+     &kp _BTICK   &kp Q        &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _OO      &kp _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC mod    | A  mod     | R mod      | S mod      | T mod      | G mod      |     | M  mod     | N mod      | E mod      | I          | O          | Ä          |
-     mHRML2(ESC,       A,           R,           S,           T,           G)            mHRMR2(M,         N,           E,           I,           O,           _AE)
+// | ESC  LGUI  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ä  RGUI    |
+&l_ht LGUI ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O       &r_ht RGUI _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | Z          | X mod      | C mod      | D mod      | V mod      |     | K mod      | H mod      | , mod      | . mod      | / ?        | ' "        |
-     &kp m_BSLH   &kp Z        mHRML3(X,         C,           D,           V)            mHRMR3(K,         H,        COMMA,        DOT)      &se_slsh     &se_quot
+// | SHIFT      | Z          | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?        | ' "  SHIFT |
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT      &se_slsh   &r_ht RSHIFT &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &lt mNAV SPACE     &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -415,11 +423,11 @@
 // | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å          |
      &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P        &kp _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC  CTRL  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä          |
- &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO      &kp _AE
+// | ESC  LGUI  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä  RGUI    |
+ &l_ht LGUI ESC   &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO    &r_ht RGUI _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' "        |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh     &se_quot
+// | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' "  SHIFT |
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh   &r_ht RSHIFT &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &kp SPACE          &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -434,8 +442,8 @@
 // | TAB        | 1          | 2          | 3          | 4          | 5          |     | 6          | 7          | 8          | 9          | 0          | - _        |
      &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TOGGLE     | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
-    &tog mNUMBER  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
+// | TOGGLE     | LCTRL      | LALT       | LGUI       | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
+    &tog mNUMBER  &kp LCTRL    &kp LALT     &kp LGUI     &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | "          |
      &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &kp _DQUOT
@@ -450,13 +458,13 @@
                display-name = "mNAV";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | !          | @ £        | FIND       | CTRL + P   | GO-TO IDEA |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
-     &none        &kp EXCL     &m_at_pnd    mSHRT1(F,         P,           B)            &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
+// |            | !          | @ £        | FIND       |  COM + P   | GO-TO IDEA |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
+     &trans       &kp EXCL     &m_at_pnd    mSHRT1(F,         P,           B)            &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | CTRL+A mod | CTRL+R mod | CTRL+S mod | CTRL+T mod | CTRL + G   |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
-     &none        mSHRT2(A,         R,           S,           T,           G)            &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
+// |            |LCTRL 1 shot| LALT 1 shot| LGUI 1 shot|LSHFT 1 shot| COM + G    |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
+     &trans       &skq LCTRL   &skq LALT    &skq LGUI   &skq LSHIFT   &kp LG(G)          &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | "          |
+// | SHIFT      | UNDO       | CUT        | COPY       |  COM + D   | PASTE      |     | <<         | vol-       | vol+       | >>         | :          | "          |
      &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | =                | _                | - _              |
@@ -469,11 +477,11 @@
                display-name = "mNAV2";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | MAC LAYER  |
-     &none        &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &to MAC_COL
+// |            |            |            |            |            |            |     | HOME       | PAGE DOWN  | PAGE UP    | END        | ´ `        | - _        |
+     &trans       &none        &none        &none        &none        &none              &kp HOME     &kp PG_DN    &kp PG_UP    &kp END      &kp _ACUTE   &kp _MINUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |            | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
-     &none        &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
+// |            | LCTRL      | LALT       | LGUI       | LSHFT      |            |     | LEFT       | DOWN       | UP         | RIGTH      | ; :        | + ?        |
+     &trans       &kp LCTRL    &kp LALT     &kp LGUI     &kp LSHIFT   &none              &kp LEFT     &kp DOWN     &kp UP       &kp RIGHT    &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      |            |            |            |            |            |     | <<         | vol-       | vol+       | >>         | :          | "          |
      &kp LSHIFT   &none        &none        &none        &none        &none              &kp C_PREV   &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp _COLON   &kp _DQUOT
@@ -488,14 +496,14 @@
                display-name = "mFUNC";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | WIN LAYER  | 1          | 2          | 3          | 4          | 5          |     | F12        | F7         | F8         | F9         |            |            |
-    &to WIN_COL  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5              &kp F12      &kp F7       &kp F8       &kp F9       &none        &none
+// | TAB        | 1          | 2          | 3          | 4          | WIN LAYER  |     | F12        | F7         | F8         | F9         |            | MAC LAYER  |
+     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &to WIN_COL        &kp F12      &kp F7       &kp F8       &kp F9       &none        &to MAC_COL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | reset LEFT | LGUI       | LALT       | LCTRL      | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            | reset RIGHT|
-     &sys_reset   &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT  &to MAC_QRTY        &kp F11      &kp F4       &kp F5       &kp F6       &none        &sys_reset 
+// | reset LEFT | LCTRL      | LALT       | LGUI       | LSHFT      | GAMING     |     | F11        | F4         | F5         | F6         |            | reset RIGHT|
+     &sys_reset   &kp LCTRL    &kp LALT     &kp LGUI     &kp LSHIFT  &to MAC_QRTY        &kp F11      &kp F4       &kp F5       &kp F6       &none        &sys_reset 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | BTCLR      | BT1        | BT2        | BT3        | BT4        | COLEMAK    |     | F10        | F1         | F2         | F3         |            |            |
-     &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &to MAC_COL        &kp F10      &kp F1       &kp F2       &kp F3       &none        &none 
+// | BTCLR      | BT1        | BT2        | BT3        | BT4        | COLEMAK    |     | F10        | F1         | F2         | F3         | / ?        |            |
+     &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &to WIN_COL        &kp F10      &kp F1       &kp F2       &kp F3       &se_slsh     &trans 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |                  |                  |                  |     | DEL              | BSPC             | CAPS             |
                           &none              &none              &none                    &kp DEL            &kp BSPC           &kp CAPS
@@ -510,8 +518,8 @@
 // | ~          | !          | @ £        | [ {        | ] }        | #          |     |            |            |            |            |            |            |
      &kp m_TILDE  &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &none        &none        &none        &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ¨ ^        | &          | $ €        | (          | )          | %          |     |            | RSHFT      | RCTRL      | RALT       | RGUI       | RCTRL      |
-     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &none        &kp RSHIFT   &kp RCTRL    &kp RALT     &kp RGUI     &kp RCTRL
+// | ¨ ^        | &          | $ €        | (          | )          | %          |     |            | RSHFT      | RGUI       | RALT       | RCTRL      | RGUI       |
+     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &none        &kp RSHIFT   &kp RGUI     &kp RALT     &kp RCTRL    &kp RGUI
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | \          | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
      &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
@@ -535,8 +543,8 @@
 // | SHIFT      |            |            | RIGHT CLICK| LEFT CLICK | SCROLL DOWN|     |MIDDLE CLICK| LEFT CLICK | RIGHT CLICK|            |            |            |
      &kp LSHIFT   &none        &none        &mkp RCLK    &mkp LCLK    &msc SCRL_DOWN         &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      | SPC              | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
-                          &kp SPACE          &mkp LCLK          &mkp RCLK                &none              &none              &none
+//                      |MIDDLE CLICK      | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
+                          &mkp MCLK          &mkp LCLK          &mkp RCLK                &none              &none              &none
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                >;
           };
