@@ -177,7 +177,7 @@
           se_quot: single_quote_shift_double_quote {            
                compatible = "zmk,behavior-mod-morph";            
                #binding-cells = <0>;
-               bindings = <&kp _SQUOT>, <&kp _DQUOT>; /* ' " */
+               bindings = <&kp NON_US_HASH>, <&kp LS(N2)>; /* ' " */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
           se_slsh: slash_shift_question {            
@@ -256,7 +256,7 @@
 &l_ht LCTRL ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O      &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z          | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?        | ' " SHIFT  |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT      &se_slsh   &mt RSHIFT &se_quot
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT      &se_slsh   &r_ht RSHIFT &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &lt wNAV SPACE     &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -275,7 +275,7 @@
  &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO    &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' " SHIFT  |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh   &mt RSHIFT &se_quot
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh   &r_ht RSHIFT &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &kp SPACE          &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -408,7 +408,7 @@
 &l_ht LGUI ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O       &r_ht RGUI _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z          | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?        | ' " SHIFT  |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT      &se_slsh   &mt RSHIFT &se_quot
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT      &se_slsh   &r_ht RSHIFT &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &lt mNAV SPACE     &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -427,7 +427,7 @@
  &l_ht LGUI ESC   &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO    &r_ht RGUI _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' "  SHIFT |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh   &mt RSHIFT &se_quot
+     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh   &r_ht RSHIFT &se_quot
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &kp SPACE          &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
