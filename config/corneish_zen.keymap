@@ -234,8 +234,16 @@
           m_at_pnd: m_at_shift_pound {            
                compatible = "zmk,behavior-mod-morph";            
                #binding-cells = <0>;
-               bindings = <&kp m_AT>, <&kp m_POUND>; /* @ £ Mac */
+               bindings = <&kp m_AT>, <&pound_fix>; /* @ £ Mac */
                mods = <(MOD_LSFT|MOD_RSFT)>;
+          };
+          /* macro that explicitly releases shift modifiers, then taps the £ such that it doesn't result in ¥ */
+          pound_fix: pound_fix {
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <0>;
+               tap-ms = <5>;
+               bindings = <&macro_release &kp LSHFT &kp RSHFT>, <&macro_tap &kp m_POUND>;
           };
           w_dlr_eur: w_dollar_shift_eur {
                compatible = "zmk,behavior-mod-morph";            
