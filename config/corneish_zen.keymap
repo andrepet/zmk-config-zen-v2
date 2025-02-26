@@ -236,6 +236,7 @@
                #binding-cells = <0>;
                bindings = <&kp m_AT>, <&pound_fix>; /* @ £ Mac */
                mods = <(MOD_LSFT|MOD_RSFT)>;
+               keep-mods = <(MOD_LSFT|MOD_RSFT)>; // Keep the shift modifier active
           };
           /* macro that explicitly releases shift modifiers, then taps the £ such that it doesn't result in ¥ */
           pound_fix: pound_fix {
