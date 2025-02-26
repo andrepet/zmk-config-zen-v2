@@ -237,6 +237,7 @@
                #binding-cells = <0>;
                bindings = <&kp m_AT>, <&pound_fix>; /* @ £ Mac */
                mods = <(MOD_LSFT|MOD_RSFT)>;
+               keep-mods = <(MOD_LSFT|MOD_RSFT)>; // Important: Keep track of shift state
           };
           /* macro that explicitly releases shift modifiers, then taps the £ such that it doesn't result in ¥ */
           pound_fix: pound_fix {
@@ -245,11 +246,12 @@
                wait-ms = <10>;
                tap-ms = <10>;
                bindings = 
-                  <&macro_release &kp LSHFT &kp RSHFT>,  // First release all shift modifiers
+                  <&macro_release &kp LSHFT &kp RSHFT>,  // Release shifts
                   <&macro_wait_time 10>,                 // Short pause
                   <&macro_tap &kp m_POUND>,              // Tap the Alt+3 for £
-                  <&macro_wait_time 10>;                 // Short pause at the end
-          };
+                  <&macro_wait_time 10>,                 // Short pause
+                  <&macro_tap &sk 0>;                    // Reset sticky keys state
+        };
           w_dlr_eur: w_dollar_shift_eur {
                compatible = "zmk,behavior-mod-morph";            
                #binding-cells = <0>;
