@@ -230,6 +230,7 @@
                #binding-cells = <0>;
                bindings = <&kp w_AT>, <&kp w_POUND>; /* @ £  Windows */
                mods = <(MOD_LSFT|MOD_RSFT)>;
+               keep-mods = <(MOD_LSFT|MOD_RSFT)>; // Keep the shift modifier active
           };
           m_at_pnd: m_at_shift_pound {            
                compatible = "zmk,behavior-mod-morph";            
