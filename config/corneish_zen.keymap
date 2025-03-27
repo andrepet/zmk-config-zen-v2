@@ -168,14 +168,20 @@
                quick-release; // deactivate the sticky key on the next key being pressed, as opposed to released
                ignore-modifiers; // ensures sticky key modifier will get combined in chain, callum-style mods 
           };
-          quot_shift: quot_shift {
+          r_quot: right_side_quote {
                compatible = "zmk,behavior-hold-tap";
-               label = "QUOT_SHIFT";
                #binding-cells = <2>;
                flavor = "tap-preferred";
                tapping-term-ms = <175>;
-               quick-tap-ms = <125>;
+               quick-tap-ms = <200>;
+               require-prior-idle-ms = <125>; 
                bindings = <&kp>, <&se_quot>; /* necessary special case because _DQUOT is alias for LS(N2) */
+               hold-trigger-key-positions = <
+                    0  1  2  3  4  5 
+                   12 13 14 15 16 17
+                   24 25 26 27 28 29
+                   36 37 38
+               >;
           };
           se_quot: single_quote_shift_double_quote {            
                compatible = "zmk,behavior-mod-morph";            
@@ -189,14 +195,14 @@
                bindings = <&kp _SEMIC>, <&kp _COLON>; /* ; : */
                mods = <(MOD_LSFT|MOD_RSFT)>;
           };
-          mod_slsh: mod_slash_question {
+          r_slsh: right_side_slash_question {
               compatible = "zmk,behavior-hold-tap";
               #binding-cells = <2>;
               flavor = "tap-preferred";
               tapping-term-ms = <175>;
               quick-tap-ms = <200>;
-              require-prior-idle-ms = <125>; /* necessary special case because _QMARK is alias for LS(MINUS) */
-              bindings = <&kp>, <&se_slsh>;
+              require-prior-idle-ms = <125>; 
+              bindings = <&kp>, <&se_slsh>; /* necessary special case because _QMARK is alias for LS(MINUS) */
               hold-trigger-key-positions = <
                    0  1  2  3  4  5 
                   12 13 14 15 16 17
@@ -295,7 +301,7 @@
 &l_ht LCTRL ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O      &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z  GUI     | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?  GUI   | ' " SHIFT  |
-  &kp LSHIFT    &l_ht LGUI Z   &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT  &mod_slsh RGUI 0  &quot_shift RSHIFT 0
+  &kp LSHIFT    &l_ht LGUI Z   &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT  &r_slsh RGUI 0  &r_quot RSHIFT 0
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &lt wNAV SPACE     &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -314,7 +320,7 @@
  &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO    &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z  GUI     | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?  GUI   | ' " SHIFT  |
-  &kp LSHIFT    &l_ht LGUI Z   &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT  &mod_slsh RGUI 0  &quot_shift RSHIFT 0
+  &kp LSHIFT    &l_ht LGUI Z   &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT  &r_slsh RGUI 0  &r_quot RSHIFT 0
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &kp SPACE          &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -447,7 +453,7 @@
 &l_ht LGUI ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O       &r_ht RGUI _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z  CTRL    | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?  CTRL  | ' " SHIFT  |
-  &kp LSHIFT   &l_ht LCTRL Z   &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT  &mod_slsh RCTRL 0  &quot_shift RSHIFT 0
+  &kp LSHIFT   &l_ht LCTRL Z   &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT  &r_slsh RCTRL 0  &r_quot RSHIFT 0
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &lt mNAV SPACE     &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -466,7 +472,7 @@
  &l_ht LGUI ESC   &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO    &r_ht RGUI _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z  CTRL    | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?  CTRL  | ' "  SHIFT |
-  &kp LSHIFT   &l_ht LCTRL Z   &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT  &mod_slsh RCTRL 0  &quot_shift RSHIFT 0
+  &kp LSHIFT   &l_ht LCTRL Z   &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT  &r_slsh RCTRL 0  &r_quot RSHIFT 0
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &kp SPACE          &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
