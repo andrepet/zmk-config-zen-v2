@@ -273,14 +273,14 @@
                display-name = "WIN_COL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | `          | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ö          | Å          |
-     &kp _BTICK   &kp Q        &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _OO      &kp _OE    
+// | `  ALT     | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ö          | Å  ALT     |
+&l_ht LALT _BTICK   &kp Q      &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _OO     &r_ht RALT _OE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ESC  CTRL  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ä  CTRL    |
 &l_ht LCTRL ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O      &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?        | ' " SHIFT  |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT      &se_slsh   &quot_shift RSHIFT 0
+// | SHIFT      | Z  GUI     | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?  GUI   | ' " SHIFT  |
+  &kp LSHIFT    &l_ht LGUI Z   &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT  &r_ht RGUI &se_slsh  &quot_shift RSHIFT 0
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &lt wNAV SPACE     &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -292,14 +292,14 @@
                display-name = "WIN_QRTY ";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å          |
-     &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P        &kp _OE    
+// | TAB  ALT   | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å  ALT     |
+&l_ht LALT TAB    &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P      &r_ht RALT _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ESC  CTRL  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä  CTRL    |
  &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO    &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' " SHIFT  |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh   &quot_shift RSHIFT 0
+// | SHIFT      | Z  GUI     | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?  GUI   | ' " SHIFT  |
+  &kp LSHIFT    &l_ht LGUI Z   &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT  &r_ht RGUI &se_slsh  &quot_shift RSHIFT 0
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt wFUNC TAB      &kp SPACE          &lt wNUMBER RET          &lt wMOUSE DEL     &lt wSYMBOL BSPC   &lt wNAV2 BSPC
@@ -425,14 +425,14 @@
                display-name = "MAC_COL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | `          | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ö          | Å          |
-     &kp _BTICK   &kp Q        &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _OO      &kp _OE    
+// | `  ALT     | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ö          | Å  ALT     |
+&l_ht LALT _BTICK   &kp Q      &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _OO     &r_ht RALT _OE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ESC  LGUI  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ä  RGUI    |
 &l_ht LGUI ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O       &r_ht RGUI _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?        | ' " SHIFT  |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT      &se_slsh   &quot_shift RSHIFT 0
+// | SHIFT      | Z  CTRL    | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?  CTRL  | ' " SHIFT  |
+  &kp LSHIFT   &l_ht LCTRL Z   &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT  &r_ht RCTRL &se_slsh  &quot_shift RSHIFT 0
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &lt mNAV SPACE     &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -444,14 +444,14 @@
                display-name = "MAC_QRTY";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å          |
-     &kp TAB      &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P        &kp _OE    
+// | TAB  ALT   | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å  ALT     |
+&l_ht LALT TAB    &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P      &r_ht RALT _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ESC  LGUI  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä  RGUI    |
  &l_ht LGUI ESC   &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO    &r_ht RGUI _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z          | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?        | ' "  SHIFT |
-     &kp LSHIFT   &kp Z        &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT      &se_slsh   &quot_shift RSHIFT 0
+// | SHIFT      | Z  CTRL    | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?  CTRL  | ' "  SHIFT |
+  &kp LSHIFT   &l_ht LCTRL Z   &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT  &r_ht RCTRL &se_slsh  &quot_shift RSHIFT 0
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &kp SPACE          &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
