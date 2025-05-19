@@ -560,14 +560,14 @@
                display-name = "mSYMBOL";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ~          | !          | @ £        | [ {        | ] }        | #          |     |            |            |            |            |            |            |
-     &kp m_TILDE  &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &none        &none        &none        &none        &none        &none
+// | ~          | !          | @ £        | [ {        | ] }        | #          |     | -          | {          | }          |            |            |            |
+     &kp m_TILDE  &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &kp _MINUS   m_LBRC       m_RBRC       &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ¨ ^        | &          | $ €        | (          | )          | %          |     |            |RSHFT 1 shot| RGUI 1 shot| RALT 1 shot|RCTRL 1 shot| RGUI       |
-     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &none       &skq RSHIFT   &skq RGUI    &skq RALT    &skq RCTRL   &kp RGUI
+// | ¨ ^        | &          | $ €        | (          | )          | %          |     | =          |RSHFT 1 shot| RGUI 1 shot| RALT 1 shot|RCTRL 1 shot| RGUI       |
+     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ     &skq RSHIFT   &skq RGUI    &skq RALT    &skq RCTRL   &kp RGUI
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
-     &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
+// | \          | "|" \      | ^          | <          | >          | *          |     | -          | {          | }          |            |            | SHIFT      |
+     &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &kp _MINUS   m_LBRC       m_RBRC       &none        &none        &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB              | SPACE            | ENTER            |     |                  |                  |                  |  
                           &kp TAB            &kp SPACE          &kp RET                  &none              &none              &none
