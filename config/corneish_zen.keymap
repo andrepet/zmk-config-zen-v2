@@ -42,7 +42,7 @@
 #define mHRML3(k1,k2,k3,k4) &l_ht LA(LCTRL) k1   &l_ht LG(LALT) k2   &l_ht LS(LGUI) k3   &l_ht LC(LS(LA(LGUI))) k4
 
 #define mHRMR1(k1,k2) &r_ht RS(RALT) k1   &r_ht RC(RGUI) k2
-#define mHRMR2(k1,k2,k3,k4,k5,k6) &r_ht RC(RS(RALT)) k1   &r_ht RSHIFT k2   &r_ht RGUI k3   &r_ht RALT k4   &r_ht RCTRL k5   &r_ht RGUI k6
+#define mHRMR2(k1,k2,k3,k4,k5,k6) &r_ht RC(RS(RALT)) k1   &r_ht RSHIFT k2   &r_ht RGUI k3   &r_ht RALT k4   &r_ht RCTRL k5   &r_ht RCTRL k6
 #define mHRMR3(k1,k2,k3,k4) &r_ht RC(RS(RA(RGUI))) k1   &r_ht RS(RGUI) k2   &r_ht RG(RALT) k3   &r_ht RA(RCTRL) k4
 
 // Short commands macros for Windows
@@ -449,11 +449,11 @@
 // | `  ALT     | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ö          | Å  ALT     |
 &l_ht LALT _BTICK   &kp Q      &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _OO     &r_ht RALT _OE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC  LGUI  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ä  RGUI    |
-&l_ht LGUI ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O       &r_ht RGUI _AE
+// | ESC  CTRL  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ä  CTRL    |
+&l_ht LCTRL ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O       &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z  CTRL    | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?  CTRL  | ' " SHIFT  |
-  &kp LSHIFT   &l_ht LCTRL Z   &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT  &r_slsh RCTRL 0  &r_quot RSHIFT 0
+// | SHIFT      | Z  GUI     | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?  GUI   | ' " SHIFT  |
+  &kp LSHIFT   &l_ht LGUI Z    &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT  &r_slsh RGUI 0  &r_quot RSHIFT 0
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE NAV        | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &lt mNAV SPACE     &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -466,13 +466,13 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB  ALT   | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å  ALT     |
-&l_ht LALT TAB    &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P      &r_ht RALT _OE    
+&l_ht LALT TAB    &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P       &r_ht RALT _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC  LGUI  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä  RGUI    |
- &l_ht LGUI ESC   &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO    &r_ht RGUI _AE
+// | ESC  LCTRL | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä  RCTRL    |
+ &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO     &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | SHIFT      | Z  CTRL    | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?  CTRL  | ' "  SHIFT |
-  &kp LSHIFT   &l_ht LCTRL Z   &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT  &r_slsh RCTRL 0  &r_quot RSHIFT 0
+// | SHIFT      | Z  GUI     | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?  GUI   | ' "  SHIFT |
+  &kp LSHIFT   &l_ht LGUI Z    &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT  &r_slsh RGUI 0  &r_quot RSHIFT 0
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB FUNC         | SPACE            | ENTER NUMBER     |     | DEL MOUSE        | BSP SYMBOL       | BSP NAV2         |
                           &lt mFUNC TAB      &kp SPACE          &lt mNUMBER RET          &lt mMOUSE DEL     &lt mSYMBOL BSPC   &lt mNAV2 BSPC
@@ -561,13 +561,13 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ~          | !          | @ £        | [ {        | ] }        | #          |     | -          | {          | }          |            |            |            |
-     &kp m_TILDE  &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &kp _MINUS   m_LBRC       m_RBRC       &none        &none        &none
+     &kp m_TILDE  &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &kp _MINUS   &kp m_LBRC   &kp m_RBRC   &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ¨ ^        | &          | $ €        | (          | )          | %          |     | =          |RSHFT 1 shot| RGUI 1 shot| RALT 1 shot|RCTRL 1 shot| RGUI       |
-     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ     &skq RSHIFT   &skq RGUI    &skq RALT    &skq RCTRL   &kp RGUI
+// | ¨ ^        | &          | $ €        | (          | )          | %          |     | =          |RSHFT 1 shot| RGUI 1 shot| RALT 1 shot|RCTRL 1 shot| RCTRL      |
+     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ     &skq RSHIFT   &skq RGUI    &skq RALT    &skq RCTRL   &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | \          | "|" \      | ^          | <          | >          | *          |     | -          | {          | }          |            |            | SHIFT      |
-     &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &kp _MINUS   m_LBRC       m_RBRC       &none        &none        &kp RSHIFT
+     &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &kp _MINUS   &kp m_LBRC   &kp m_RBRC   &none        &none        &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB              | SPACE            | ENTER            |     |                  |                  |                  |  
                           &kp TAB            &kp SPACE          &kp RET                  &none              &none              &none
