@@ -341,8 +341,8 @@
 // | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | / ?        | *          |
      &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &se_slsh     &kp _ASTRX
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      | FUNC             | NAV SPACE        | ENTER            |     | =                | 0 SYM            | - _ NAV2         |
-                          &mo wFUNC          &lt wNAV SPACE     &kp RET                  &kp _EQ            &lt wSYMBOL N0     &lt wNAV2 _MINUS 
+//                      | FUNC             | NAV SPACE        | ENTER            |     | DEL              | 0 SYM            | BSP NAV2         |
+                          &mo wFUNC          &lt wNAV SPACE     &kp RET                  &kp DEL            &lt wSYMBOL N0     &lt wNAV2 BSPC 
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                >;
           };
@@ -414,8 +414,8 @@
 // | ¨ ^        | &          | $ €        | (          | )          | %          |     | =         |RSHFT 1 shot|RCTRL 1 shot| RALT 1 shot|RGUI 1 shot | RCTRL       |
      &kp _UPDOTS  &kp _AMPER   &w_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ      &skq RSHIFT  &skq RCTRL   &skq RALT    &skq RGUI    &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | "|" \      | ^          | <          | >          | *          |     | -          | {          | }          |            |            | SHIFT      |
-     &kp w_BSLH   &w_se_pipe   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &kp _MINUS   &kp w_LBRC   &kp w_RBRC   &none        &none        &kp RSHIFT
+// | \          | "|" \      | ^          | <          | >          | *          |     |           |            |            |            |            | SHIFT      |
+     &kp w_BSLH   &w_se_pipe   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none       &none        &none        &none        &none        &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB              | SPACE            | ENTER            |     |                  |                  |                  |  
                           &kp TAB            &kp SPACE          &kp RET                  &none              &none              &none
@@ -493,8 +493,8 @@
 // | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | / ?        | *          |
      &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &se_slsh     &kp _ASTRX
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      | FUNC             | NAV SPACE        | ENTER            |     | =                | 0 SYM            | - _ NAV2         |
-                          &mo mFUNC          &lt mNAV SPACE     &kp RET                  &kp _EQ            &lt mSYMBOL N0     &lt mNAV2 _MINUS 
+//                      | FUNC             | NAV SPACE        | ENTER            |     | DEL              | 0 SYM            | BSP NAV2         |
+                          &mo mFUNC          &lt mNAV SPACE     &kp RET                  &kp DEL            &lt mSYMBOL N0     &lt mNAV2 BSPC 
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                >;
           };
@@ -566,8 +566,8 @@
 // | ¨ ^        | &          | $ €        | (          | )          | %          |     | =          |RSHFT 1 shot| RGUI 1 shot| RALT 1 shot|RCTRL 1 shot| RCTRL      |
      &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ     &skq RSHIFT   &skq RGUI    &skq RALT    &skq RCTRL   &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | "|" \      | ^          | <          | >          | *          |     | -          | {          | }          |            |            | SHIFT      |
-     &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &kp _MINUS   &kp m_LBRC   &kp m_RBRC   &none        &none        &kp RSHIFT
+// | \          | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
+     &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB              | SPACE            | ENTER            |     |                  |                  |                  |  
                           &kp TAB            &kp SPACE          &kp RET                  &none              &none              &none
