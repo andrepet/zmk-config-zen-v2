@@ -332,8 +332,8 @@
                display-name = "wNumber";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        | 1          | 2          | 3          | 4          | 5          |     | 6          | 7          | 8          | 9          | 0          | - _        |
-     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp _MINUS
+// | TAB        | 1          | 2          | 3          | 4          | 5          |     | 6          | 7          | 8          | 9          | 0          | BSP        |
+     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp BSPC
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TOGGLE     | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
     &tog wNUMBER  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
@@ -341,8 +341,8 @@
 // | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | *          |
      &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &kp _ASTRX
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      | FUNC             | NAV SPACE        | ENTER            |     | =                | 0 SYM            | BSP NAV2         |
-                          &mo wFUNC          &lt wNAV SPACE     &kp RET                  &kp _EQ            &lt wSYMBOL N0     &lt wNAV2 BSPC 
+//                      | FUNC             | NAV SPACE        | ENTER            |     | =                | 0 SYM            | - _ NAV2         |
+                          &mo wFUNC          &lt wNAV SPACE     &kp RET                  &kp _EQ            &lt wSYMBOL N0     &lt wNAV2 _MINUS  
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                >;
           };
@@ -484,8 +484,8 @@
                display-name = "mNumber";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TAB        | 1          | 2          | 3          | 4          | 5          |     | 6          | 7          | 8          | 9          | 0          | - _        |
-     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp _MINUS
+// | TAB        | 1          | 2          | 3          | 4          | 5          |     | 6          | 7          | 8          | 9          | 0          | BSP        |
+     &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp BSPC 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TOGGLE     | LCTRL      | LALT       | LGUI       | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
     &tog mNUMBER  &kp LCTRL    &kp LALT     &kp LGUI     &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
@@ -493,8 +493,8 @@
 // | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | *          |
      &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &kp _ASTRX
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-//                      | FUNC             | NAV SPACE        | ENTER            |     | =                | 0 SYM            | BSP NAV2         |
-                          &mo mFUNC          &lt mNAV SPACE     &kp RET                  &kp _EQ            &lt mSYMBOL N0     &lt mNAV2 BSPC 
+//                      | FUNC             | NAV SPACE        | ENTER            |     | =                | 0 SYM            | - _ NAV2         |
+                          &mo mFUNC          &lt mNAV SPACE     &kp RET                  &kp _EQ            &lt mSYMBOL N0     &lt mNAV2 _MINUS 
 //                      ----------------------------------------------------------     ----------------------------------------------------------
                >;
           };
