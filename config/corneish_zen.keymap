@@ -411,8 +411,8 @@
 // | ~          | !          | @ £        | [ {        | ] }        | #          |     | -          | {          | }          |            |            |            |
      &kp w_TILDE  &kp EXCL     &w_at_pnd    &w_se_lbrc   &w_se_rbrc   &kp HASH           &kp _MINUS   &kp w_LBRC   &kp w_RBRC   &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ¨ ^        | &          | $ €        | (          | )          | %          |     | =         |RSHFT 1 shot|  Ö         | RALT 1 shot|RGUI 1 shot | RCTRL       |
-     &kp _UPDOTS  &kp _AMPER   &w_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ      &skq RSHIFT  &kp _OO     &skq LALT    &skq RGUI    &kp RCTRL
+// | ¨ ^        | &          | $ €        | (          | )          | %          |     | =         |RSHFT 1 shot|RCTRL 1 shot| LALT 1 shot|RGUI 1 shot | RCTRL       |
+     &kp _UPDOTS  &kp _AMPER   &w_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ      &skq RSHIFT  &skq RCTRL  &skq LALT    &skq RGUI    &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | \          | "|" \      | ^          | <          | >          | *          |     |           |            |            |            |            | SHIFT      |
      &kp w_BSLH   &w_se_pipe   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none       &none        &none        &none        &none        &kp RSHIFT
@@ -563,8 +563,8 @@
 // | ~          | !          | @ £        | [ {        | ] }        | #          |     | -          | {          | }          |            |            |            |
      &kp m_TILDE  &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &kp _MINUS   &kp m_LBRC   &kp m_RBRC   &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ¨ ^        | &          | $ €        | (          | )          | %          |     | =          |RSHFT 1 shot| Ö          | RALT 1 shot|RCTRL 1 shot| RCTRL      |
-     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ     &skq RSHIFT   &kp _OO      &skq LALT    &skq RCTRL   &kp RCTRL
+// | ¨ ^        | &          | $ €        | (          | )          | %          |     | =          |RSHFT 1 shot|RSHFT 1 shot| LALT 1 shot|RCTRL 1 shot| RCTRL      |
+     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ     &skq RSHIFT  &skq RCTRL    &skq LALT    &skq RCTRL   &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | \          | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
      &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
