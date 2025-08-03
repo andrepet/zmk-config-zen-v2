@@ -295,7 +295,7 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | `  ALT     | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ä          | Å  ALT     |
-&l_ht LALT _BTICK   &kp Q      &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _AE     &r_ht RALT _OE
+&l_ht LALT _BTICK   &kp Q      &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _AE     &r_ht LALT _OE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ESC  CTRL  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ö  CTRL    |
 &l_ht LCTRL ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O      &r_ht RCTRL _OO
@@ -314,7 +314,7 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB  ALT   | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å  ALT     |
-&l_ht LALT TAB    &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P      &r_ht RALT _OE    
+&l_ht LALT TAB    &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P      &r_ht LALT _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ESC  CTRL  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ä          | Ö  CTRL    |
  &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _AE    &r_ht RCTRL _OO
@@ -412,7 +412,7 @@
      &kp w_TILDE  &kp EXCL     &w_at_pnd    &w_se_lbrc   &w_se_rbrc   &kp HASH           &kp _MINUS   &kp w_LBRC   &kp w_RBRC   &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ¨ ^        | &          | $ €        | (          | )          | %          |     | =         |RSHFT 1 shot|  Ö         | RALT 1 shot|RGUI 1 shot | RCTRL       |
-     &kp _UPDOTS  &kp _AMPER   &w_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ      &skq RSHIFT  &kp _OO     &skq RALT    &skq RGUI    &kp RCTRL
+     &kp _UPDOTS  &kp _AMPER   &w_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ      &skq RSHIFT  &kp _OO     &skq LALT    &skq RGUI    &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | \          | "|" \      | ^          | <          | >          | *          |     |           |            |            |            |            | SHIFT      |
      &kp w_BSLH   &w_se_pipe   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none       &none        &none        &none        &none        &kp RSHIFT
@@ -447,7 +447,7 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | `  ALT     | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ä          | Å  ALT     |
-&l_ht LALT _BTICK   &kp Q      &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _AE     &r_ht RALT _OE
+&l_ht LALT _BTICK   &kp Q      &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _AE     &r_ht LALT _OE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ESC  CTRL  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ö  CTRL    |
 &l_ht LCTRL ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O       &r_ht RCTRL _OO
@@ -466,7 +466,7 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB  ALT   | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å  ALT     |
-&l_ht LALT TAB    &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P       &r_ht RALT _OE    
+&l_ht LALT TAB    &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P       &r_ht LALT _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ESC  LCTRL | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ä          | Ö  RCTRL    |
  &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _AE     &r_ht RCTRL _OO
@@ -564,7 +564,7 @@
      &kp m_TILDE  &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &kp _MINUS   &kp m_LBRC   &kp m_RBRC   &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ¨ ^        | &          | $ €        | (          | )          | %          |     | =          |RSHFT 1 shot| Ö          | RALT 1 shot|RCTRL 1 shot| RCTRL      |
-     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ     &skq RSHIFT   &kp _OO      &skq RALT    &skq RCTRL   &kp RCTRL
+     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ     &skq RSHIFT   &kp _OO      &skq LALT    &skq RCTRL   &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | \          | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
      &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
@@ -575,7 +575,7 @@
                >;
           };
 
-          m_mouse_layer {
+          m_mouse_layer 
                display-name = "mMouse";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
