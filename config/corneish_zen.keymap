@@ -33,7 +33,7 @@
 #define wHRML3(k1,k2,k3,k4) &l_ht LA(LGUI) k1   &l_ht LC(LALT) k2   &l_ht LS(LCTRL) k3   &l_ht LC(LS(LA(LGUI))) k4
 
 #define wHRMR1(k1,k2) &r_ht RS(RALT) k1   &r_ht RC(RGUI) k2
-#define wHRMR2(k1,k2,k3,k4,k5,k6) &r_ht RC(RS(RALT)) k1   &r_ht RSHIFT k2   &r_ht RCTRL k3   &r_ht RALT k4   &r_ht RGUI k5   &r_ht RCTRL k6
+#define wHRMR2(k1,k2,k3,k4) &r_ht RC(RS(RALT)) k1   &r_ht RSHIFT k2   &r_ht RCTRL k3   &r_ht LALT k4
 #define wHRMR3(k1,k2,k3,k4) &r_ht RC(RS(RA(RGUI))) k1   &r_ht RS(RCTRL) k2   &r_ht RC(RALT) k3   &r_ht RA(RGUI) k4
 
 // Home row mods macros for Mac
@@ -42,7 +42,7 @@
 #define mHRML3(k1,k2,k3,k4) &l_ht LA(LCTRL) k1   &l_ht LG(LALT) k2   &l_ht LS(LGUI) k3   &l_ht LC(LS(LA(LGUI))) k4
 
 #define mHRMR1(k1,k2) &r_ht RS(RALT) k1   &r_ht RC(RGUI) k2
-#define mHRMR2(k1,k2,k3,k4,k5,k6) &r_ht RC(RS(RALT)) k1   &r_ht RSHIFT k2   &r_ht RGUI k3   &r_ht RALT k4   &r_ht RCTRL k5   &r_ht RCTRL k6
+#define mHRMR2(k1,k2,k3,k4) &r_ht RC(RS(RALT)) k1   &r_ht RSHIFT k2   &r_ht RGUI k3   &r_ht LALT k4
 #define mHRMR3(k1,k2,k3,k4) &r_ht RC(RS(RA(RGUI))) k1   &r_ht RS(RGUI) k2   &r_ht RG(RALT) k3   &r_ht RA(RCTRL) k4
 
 // Short commands macros for Windows
@@ -430,8 +430,8 @@
 // | TAB        |            |            | MOUSE UP   |            | SCROLL UP  |     |WEB TAB LEFT|WEB TAB BACK|WEB TAB FRWD|WEB TAB RGHT|            |            |
      &kp TAB      &none        &none      &mmv MOVE_UP   &none       &msc SCRL_UP  &kp LS(LC(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)  &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |TOGGLE MOUSE| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL RIGHT|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | HOME mod   | END mod    |
-&tog wMOUSE  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT  wHRMR2(LEFT,     DOWN,     UP,     RIGHT,     HOME,     END)   
+// |TOGGLE MOUSE| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL RIGHT|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | LGUI       | LCTRL      |
+&tog wMOUSE  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT  wHRMR2(LEFT,     DOWN,     UP,     RIGHT)     &kp LGUI     &kp LCTRL    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      |            |            | RIGHT CLICK| LEFT CLICK | SCROLL DOWN|     |MIDDLE CLICK| LEFT CLICK | RIGHT CLICK|            |            |            |
      &kp LSHIFT   &none        &none        &mkp RCLK    &mkp LCLK    &msc SCRL_DOWN         &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
@@ -582,8 +582,8 @@
 // | TAB        |            |            | MOUSE UP   |            | SCROLL UP  |     |WEB TAB LEFT|WEB TAB BACK|WEB TAB FRWD|WEB TAB RGHT|            |            |
      &kp TAB      &none        &none       &mmv MOVE_UP  &none      &msc SCRL_UP    &kp LS(LC(TAB))  &kp LG(LEFT)  &kp LG(RIGHT)  &kp LC(TAB)  &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |TOGGLE MOUSE| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL RIGHT|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | HOME mod   | END mod    |
-&tog mMOUSE  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT  mHRMR2(LEFT,     DOWN,     UP,     RIGHT,     HOME,     END)  
+// |TOGGLE MOUSE| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL RIGHT|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | LCTRL      | LCTRL      |
+&tog mMOUSE  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT  mHRMR2(LEFT,     DOWN,     UP,     RIGHT)     &kp LCTRL    &kp LCTRL  
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      |            |            | RIGHT CLICK| LEFT CLICK | SCROLL DOWN|     |MIDDLE CLICK| LEFT CLICK | RIGHT CLICK|            |            |            |
      &kp LSHIFT   &none        &none        &mkp RCLK    &mkp LCLK    &msc SCRL_DOWN         &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
