@@ -294,11 +294,11 @@
                display-name = "Win";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | `  ALT     | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ä          | Å  ALT     |
-&l_ht LALT _BTICK   &kp Q      &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _AE     &r_ht LALT _OE
+// | `  ALT     | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ö          | Å  ALT     |
+&l_ht LALT _BTICK   &kp Q      &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y        &kp _OO    &r_ht LALT _OE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC  CTRL  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ö  CTRL    |
-&l_ht LCTRL ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O      &r_ht RCTRL _OO
+// | ESC  CTRL  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ä  CTRL    |
+&l_ht LCTRL ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O      &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z  GUI     | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?  GUI   | ' " SHIFT  |
   &kp LSHIFT    &l_ht LGUI Z   &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT  &r_slsh RGUI 0  &r_quot RSHIFT 0
@@ -316,8 +316,8 @@
 // | TAB  ALT   | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å  ALT     |
 &l_ht LALT TAB    &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P      &r_ht LALT _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC  CTRL  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ä          | Ö  CTRL    |
- &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _AE    &r_ht RCTRL _OO
+// | ESC  CTRL  | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä  CTRL    |
+ &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO    &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z  GUI     | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?  GUI   | ' " SHIFT  |
   &kp LSHIFT    &l_ht LGUI Z   &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT  &r_slsh RGUI 0  &r_quot RSHIFT 0
@@ -446,11 +446,11 @@
                display-name = "Mac";
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | `  ALT     | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ä          | Å  ALT     |
-&l_ht LALT _BTICK   &kp Q      &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y       &kp _AE     &r_ht LALT _OE
+// | `  ALT     | Q          | W          | F          | P          | B          |     | J          | L          | U          | Y          | Ö          | Å  ALT     |
+&l_ht LALT _BTICK   &kp Q      &kp W        &kp F        &kp P        &kp B              &kp J        &kp L        &kp U        &kp Y        &kp _OO    &r_ht LALT _OE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC  CTRL  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ö  CTRL    |
-&l_ht LCTRL ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O       &r_ht RCTRL _OO
+// | ESC  CTRL  | A          | R          | S          | T          | G          |     | M          | N          | E          | I          | O          | Ä  CTRL    |
+&l_ht LCTRL ESC   &kp A        &kp R        &kp S        &kp T        &kp G              &kp M        &kp N        &kp E        &kp I        &kp O      &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z  GUI     | X          | C          | D          | V          |     | K          | H          | ,          | .          | / ?  GUI   | ' " SHIFT  |
   &kp LSHIFT   &l_ht LGUI Z    &kp X        &kp C        &kp D        &kp V              &kp K        &kp H        &kp COMMA    &kp DOT  &r_slsh RGUI 0  &r_quot RSHIFT 0
@@ -466,10 +466,10 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB  ALT   | Q          | W          | E          | R          | T          |     | Y          | U          | I          | O          | P          | Å  ALT     |
-&l_ht LALT TAB    &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P       &r_ht LALT _OE    
+&l_ht LALT TAB    &kp Q        &kp W        &kp E        &kp R        &kp T              &kp Y        &kp U        &kp I        &kp O        &kp P      &r_ht LALT _OE    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ESC  LCTRL | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ä          | Ö  RCTRL    |
- &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _AE     &r_ht RCTRL _OO
+// | ESC  LCTRL | A          | S          | D          | F          | G          |     | H          | J          | K          | L          | Ö          | Ä  RCTRL    |
+ &l_ht LCTRL ESC  &kp A        &kp S        &kp D        &kp F        &kp G              &kp H        &kp J        &kp K        &kp L        &kp _OO    &r_ht RCTRL _AE
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | Z  GUI     | X          | C          | V          | B          |     | N          | M          | ,          | .          | / ?  GUI   | ' "  SHIFT |
   &kp LSHIFT   &l_ht LGUI Z    &kp X        &kp C        &kp V        &kp B              &kp N        &kp M        &kp COMMA    &kp DOT  &r_slsh RGUI 0  &r_quot RSHIFT 0
