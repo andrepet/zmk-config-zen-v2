@@ -55,7 +55,7 @@
 #define mSHRT2(k1,k2,k3,k4,k5) &l_ht LCTRL LG(k1)   &l_ht LALT LG(k2)   &l_ht LGUI LG(k3)   &l_ht LSHIFT LG(k4)   &kp LG(k5)
 #define mSHRT3(k1,k2,k3,k4,k5) &kp LG(k1)   &kp LG(k2)   &kp LG(k3)   &kp LG(k4)   &kp LG(k5)
 
-// Special swedish character macro for Windows and Mac
+// Special Swedish character macro for Windows and Mac
 #define _OE    LBKT                /* Å */
 #define _AE    SQT                 /* Ä */
 #define _OO    SEMI                /* Ö */
@@ -563,8 +563,8 @@
 // | ~          | !          | @ £        | [ {        | ] }        | #          |     | -          | {          | }          |            |            |            |
      &kp m_TILDE  &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &kp _MINUS   &kp m_LBRC   &kp m_RBRC   &none        &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ¨ ^        | &          | $ €        | (          | )          | %          |     | =          |RSHFT 1 shot|RSHFT 1 shot| LALT 1 shot|RCTRL 1 shot| RCTRL      |
-     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ     &skq RSHIFT  &skq RCTRL    &skq LALT    &skq RCTRL   &kp RCTRL
+// | ¨ ^        | &          | $ €        | (          | )          | %          |     | =          |RSHFT 1 shot| LGUI 1 shot| LALT 1 shot|RCTRL 1 shot| RCTRL      |
+     &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ     &skq RSHIFT   &skq LGUI    &skq LALT    &skq RCTRL   &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | \          | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
      &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
@@ -582,8 +582,8 @@
 // | TAB        |            |            | MOUSE UP   |            | SCROLL UP  |     |WEB TAB LEFT|WEB TAB BACK|WEB TAB FRWD|WEB TAB RGHT|            |            |
      &kp TAB      &none        &none       &mmv MOVE_UP  &none      &msc SCRL_UP    &kp LS(LC(TAB))  &kp LG(LEFT)  &kp LG(RIGHT)  &kp LC(TAB)  &none        &none
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |TOGGLE MOUSE| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL RIGHT|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | LCTRL      | LCTRL      |
-&tog mMOUSE  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT  mHRMR2(LEFT,     DOWN,     UP,     RIGHT)     &kp LCTRL    &kp LCTRL  
+// |TOGGLE MOUSE| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL RIGHT|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | LGUI       | LCTRL      |
+&tog mMOUSE  &msc SCRL_LEFT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_RIGHT  mHRMR2(LEFT,     DOWN,     UP,     RIGHT)     &kp LGUI     &kp LCTRL  
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      |            |            | RIGHT CLICK| LEFT CLICK | SCROLL DOWN|     |MIDDLE CLICK| LEFT CLICK | RIGHT CLICK|            |            |            |
      &kp LSHIFT   &none        &none        &mkp RCLK    &mkp LCLK    &msc SCRL_DOWN         &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
