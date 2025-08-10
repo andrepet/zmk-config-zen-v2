@@ -160,6 +160,23 @@
                 38 39 40 41
                >;
           };
+          // modifify toggle for left hand behavior
+          ht_tog: mod_tog {
+               compatible = "zmk,behavior-hold-tap";
+               label = "MOD_TOG";
+               #binding-cells = <2>;
+               flavor = "tap-preferred";
+               tapping-term-ms = <175>;
+               quick-tap-ms = <200>;
+               require-prior-idle-ms = <125>;
+               bindings = <&kp>, <&tog>;
+               hold-trigger-key-positions = <
+                     6  7  8  9 10 11
+                    18 19 20 21 22 23
+                    30 31 32 33 34 35
+                 38 39 40 41
+               >;
+          };
           skq: sticky_key_quick_release {
                compatible = "zmk,behavior-sticky-key";
                #binding-cells = <1>;
@@ -335,8 +352,8 @@
 // | TAB        | 1          | 2          | 3          | 4          | 5          |     | 6          | 7          | 8          | 9          | 0          | BSP        |
      &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp BSPC
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TOGGLE     | LGUI       | LALT       | LCTRL      | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
-    &tog wNUMBER  &kp LGUI     &kp LALT     &kp LCTRL    &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
+// |TOGGLE LCTRL| LGUI       | LALT       | LCTRL      | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
+&ht_tog LCTRL wNUMBER  &kp LGUI  &kp LALT   &kp LCTRL    &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | "          |
      &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &kp _DQUOT
@@ -409,13 +426,13 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ~          | !          | @ £        | [ {        | ] }        | #          |     | -          | {          | }          |            |            |            |
-     &kp w_TILDE  &kp EXCL     &w_at_pnd    &w_se_lbrc   &w_se_rbrc   &kp HASH           &kp _MINUS   &kp w_LBRC   &kp w_RBRC   &none        &none        &none
+     &kp w_TILDE  &kp EXCL     &w_at_pnd    &w_se_lbrc   &w_se_rbrc   &kp HASH           &kp _MINUS   &kp w_LBRC   &kp w_RBRC   &none        &none        &trans
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | ¨ ^        | &          | $ €        | (          | )          | %          |     | =         |RSHFT 1 shot|RCTRL 1 shot| LALT 1 shot|RGUI 1 shot | RCTRL       |
-     &kp _UPDOTS  &kp _AMPER   &w_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ      &skq RSHIFT  &skq RCTRL  &skq LALT    &skq RGUI    &kp RCTRL
+// | ¨ ^        | &          | $ €        | (          | )          | %          |     | =          |RSHFT 1 shot|RCTRL 1 shot| LALT 1 shot|RGUI 1 shot | RCTRL      |
+     &kp _UPDOTS  &kp _AMPER   &w_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ      &skq RSHIFT  &skq RCTRL  &skq LALT    &skq RGUI     &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | "|" \      | ^          | <          | >          | *          |     |           |            |            |            |            | SHIFT      |
-     &kp w_BSLH   &w_se_pipe   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none       &none        &none        &none        &none        &kp RSHIFT
+// | \          | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            |            |
+     &kp w_BSLH   &w_se_pipe   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &trans       &trans
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB              | SPACE            | ENTER            |     |                  |                  |                  |  
                           &kp TAB            &kp SPACE          &kp RET                  &none              &none              &none
@@ -428,13 +445,13 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        |            | SCROLL LEFT| MOUSE UP   |SCROLL RIGHT| SCROLL UP  |     |WEB TAB LEFT|WEB TAB BACK|WEB TAB FRWD|WEB TAB RGHT|            |            |
-     &kp TAB      &none   &msc SCRL_LEFT  &mmv MOVE_UP  &msc SCRL_RIGHT  &msc SCRL_UP  &kp LS(LC(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)  &none        &none
+     &kp TAB      &none   &msc SCRL_LEFT  &mmv MOVE_UP  &msc SCRL_RIGHT  &msc SCRL_UP  &kp LS(LC(TAB))  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LC(TAB)  &none   &trans
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |TOGGLE MOUSE| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL DOWN |     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | LGUI       | LCTRL      |
-&tog wMOUSE  &msc &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN  wHRMR2(LEFT,     DOWN,     UP,     RIGHT)     &kp LGUI     &kp LCTRL    
+// |TOGGLE LCTRL| SCROLL LEFT| MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT|SCROLL DOWN |     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | LGUI       | LCTRL      |
+&ht_tog LCTRL wMOUSE  &msc &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN  wHRMR2(LEFT,  DOWN,  UP,  RIGHT)          &kp LGUI     &kp LCTRL    
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     |MIDDLE CLICK| LEFT CLICK | RIGHT CLICK|            |            |            |
-     &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
+     &kp LSHIFT   wSHRT3(Z,         X,           C,           D,           V)            &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &trans       &trans 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |MIDDLE CLICK      | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
                           &mkp MCLK          &mkp LCLK          &mkp RCLK                &none              &none              &none
@@ -487,8 +504,8 @@
 // | TAB        | 1          | 2          | 3          | 4          | 5          |     | 6          | 7          | 8          | 9          | 0          | BSP        |
      &kp TAB      &kp N1       &kp N2       &kp N3       &kp N4       &kp N5             &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp BSPC 
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | TOGGLE     | LCTRL      | LALT       | LGUI       | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
-    &tog mNUMBER  &kp LCTRL    &kp LALT     &kp LGUI     &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
+// |TOGGLE LCTRL| LCTRL      | LALT       | LGUI       | LSHFT      |            |     | ,          | 4          | 5          | 6          | ; :        | + ?        |
+&ht_tog LCTRL mNUMBER  &kp LCTRL  &kp LALT  &kp LGUI     &kp LSHIFT   &none              &kp COMMA    &kp N4       &kp N5       &kp N6       &se_scln     &kp _PLUS
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | UNDO       | CUT        | COPY       | CTRL + D   | PASTE      |     | .          | 1          | 2          | 3          | :          | "          |
      &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &kp DOT      &kp N1       &kp N2       &kp N3       &kp _COLON   &kp _DQUOT
@@ -561,13 +578,13 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ~          | !          | @ £        | [ {        | ] }        | #          |     | -          | {          | }          |            |            |            |
-     &kp m_TILDE  &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &kp _MINUS   &kp m_LBRC   &kp m_RBRC   &none        &none        &none
+     &kp m_TILDE  &kp EXCL     &m_at_pnd    &m_se_lbrc   &m_se_rbrc   &kp HASH           &kp _MINUS   &kp m_LBRC   &kp m_RBRC   &none        &none        &trans
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | ¨ ^        | &          | $ €        | (          | )          | %          |     | =          |RSHFT 1 shot| LGUI 1 shot| LALT 1 shot|RCTRL 1 shot| RCTRL      |
      &kp _UPDOTS  &kp _AMPER   &m_dlr_eur   &kp _LPAR    &kp _RPAR    &kp PRCNT          &kp _EQ     &skq RSHIFT   &skq LGUI    &skq LALT    &skq RCTRL   &kp RCTRL
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// | \          | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            | SHIFT      |
-     &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &none        &kp RSHIFT
+// | \          | "|" \      | ^          | <          | >          | *          |     |            |            |            |            |            |            |
+     &kp m_BSLH   &kp m_PIPE   &kp _TOP     &kp _LT      &kp _GT      &kp _ASTRX         &none        &none        &none        &none        &trans       &trans
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      | TAB              | SPACE            | ENTER            |     |                  |                  |                  |  
                           &kp TAB            &kp SPACE          &kp RET                  &none              &none              &none
@@ -580,13 +597,13 @@
                bindings = <
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | TAB        |            | SCROLL LEFT| MOUSE UP   |SCROLL RIGHT| SCROLL UP  |     |WEB TAB LEFT|WEB TAB BACK|WEB TAB FRWD|WEB TAB RGHT|            |            |
-     &kp TAB      &none  &msc SCRL_LEFT  &mmv MOVE_UP  &msc SCRL_RIGHT  &msc SCRL_UP    &kp LS(LC(TAB))  &kp LG(LEFT)  &kp LG(RIGHT)  &kp LC(TAB)  &none        &none
+     &kp TAB      &none  &msc SCRL_LEFT  &mmv MOVE_UP  &msc SCRL_RIGHT  &msc SCRL_UP    &kp LS(LC(TAB))  &kp LG(LEFT)  &kp LG(RIGHT)  &kp LC(TAB)  &none       &trans
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
-// |TOGGLE MOUSE|            | MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT| SCROLL DOWN|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | LGUI       | LCTRL      |
-&tog mMOUSE  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN            mHRMR2(LEFT,     DOWN,     UP,     RIGHT)     &kp LGUI     &kp LCTRL  
+// |TOGGLE LCTRL|            | MOUSE LEFT | MOUSE DOWN | MOUSE RIGHT| SCROLL DOWN|     | LEFT  mod  | DOWN mod   | UP mod     | RIGHT mod  | LGUI       | LCTRL      |
+&ht_tog LCTRL mMOUSE  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN            mHRMR2(LEFT,     DOWN,     UP,     RIGHT)     &kp LGUI     &kp LCTRL  
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 // | SHIFT      | UNDO       | CUT        | COPY       |  COM + D   | PASTE      |     |MIDDLE CLICK| LEFT CLICK | RIGHT CLICK|            |            |            |
-     &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &none        &none
+     &kp LSHIFT   mSHRT3(Z,         X,           C,           D,           V)            &mkp MCLK    &mkp LCLK    &mkp RCLK    &none        &trans       &trans
 // -------------------------------------------------------------------------------     -------------------------------------------------------------------------------
 //                      |MIDDLE CLICK      | LEFT CLICK       | RIGHT CLICK      |     |                  |                  |                  |
                           &mkp MCLK          &mkp LCLK          &mkp RCLK                &none              &none              &none
